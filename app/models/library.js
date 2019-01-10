@@ -16,5 +16,7 @@ let librarySchema = new mongoose.Schema({
     size: Number,
     checksum: String
 });
+librarySchema.index({ name: 1, version: 1}, { unique: true });
+let model = mongoose.model('Library', librarySchema);
 
-module.exports = mongoose.model('Library', librarySchema)
+module.exports = model;

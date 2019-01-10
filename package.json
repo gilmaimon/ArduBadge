@@ -21,7 +21,8 @@
     "download-file": "^0.1.5",
     "express": "^4.16.4",
     "gunzip-file": "^0.1.1",
-    "mongoose": "^5.4.3",
+    "mongoose": "^5.2.8",
+    "request": "^2.88.0",
     "rimraf": "^2.6.3"
   }
 }
