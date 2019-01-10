@@ -1,4 +1,4 @@
-let LibraryModel = require('../models/library');
+let LibraryModel = require('./models/library');
 
 module.exports = {
     getMostRecent : function(libName) {

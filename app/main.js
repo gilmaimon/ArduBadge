@@ -1,9 +1,13 @@
+var fs = require('fs');
+let path = require('path');
+
+var app = require('express')();
+var request = require('request');
+
 let db = require('./db')('127.0.0.1:27017', 'arduino-libs');
-
-let libraries = require('../app/operations/libraries');
-
-let reloadArduinoLibraries = require('./operations/reload_libraries.js')
-let badgeUrl = require('./operations/badge');
+let reloadArduinoLibraries = require('./utilities/reload_libraries.js')
+let badgeUrl = require('./utilities/badge');
+let libraries = require('./libraries');
 
 reloadArduinoLibraries.onInterval(60 * 1000, function(err) {
     if(err) {
@@ -13,18 +17,10 @@ reloadArduinoLibraries.onInterval(60 * 1000, function(err) {
     }
 })
 
-var app = require('express')();
-var request = require('request');
-
-var fs = require('fs');
-let path = require('path');
-
 let arduinoLogoBase64 = function(filename){
     var bitmap = fs.readFileSync(filename);
     return new Buffer(bitmap).toString('base64');
 }(path.join(__dirname, '../res', 'arduino_logo_tiny.png'));
-
-
 
 app.get('/badge/:repo.svg', async function(req, res) {
     // get repo name
@@ -35,7 +31,7 @@ app.get('/badge/:repo.svg', async function(req, res) {
     
     // create appropriate badge url
     resPath = badgeUrl(arduinoLogoBase64, repoName, library != null, library? library.version: null);
-
+    
     // serve that badge (svg file) to the user
     request.get(resPath, function(err, response, body) {
         if (!err) {
