@@ -1,0 +1,25 @@
+{
+  "name": "arduino-library-manager-badge",
+  "version": "0.1.0",
+  "description": "An app to allow Arduino library makers to badge their repo's and notify users that their library is available via the built-in Arduino Library Manager.",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon app/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gilmaimon/Arduino-Library-Manager-Badge.git"
+  },
+  "author": "Gil Maimon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gilmaimon/Arduino-Library-Manager-Badge/issues"
+  },
+  "homepage": "https://github.com/gilmaimon/Arduino-Library-Manager-Badge#readme",
+  "dependencies": {
+    "download-file": "^0.1.5",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.3"
+  }
+}
