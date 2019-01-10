@@ -30,7 +30,7 @@ app.get('/badge/:repo.svg', async function(req, res) {
     let library = await libraries.getMostRecent(repoName);
     
     // create appropriate badge url
-    resPath = badgeUrl(arduinoLogoBase64, repoName, library != null, library? library.version: null);
+    resPath = badgeUrl(arduinoLogoBase64, repoName, library);
     
     // serve that badge (svg file) to the user
     request.get(resPath, function(err, response, body) {
