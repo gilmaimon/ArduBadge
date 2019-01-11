@@ -1,8 +1,8 @@
-var fs = require('fs');
+let fs = require('fs');
 let path = require('path');
 
-var app = require('express')();
-var request = require('request');
+let app = require('express')();
+let request = require('request');
 
 let db = require('./db')('127.0.0.1:27017', 'arduino-libs');
 let reloadArduinoLibraries = require('./utilities/reload_libraries.js')
