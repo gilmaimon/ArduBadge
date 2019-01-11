@@ -25,6 +25,15 @@ let arduinoLogoBase64 = function(filename){
     return new Buffer(bitmap).toString('base64');
 }(path.join(__dirname, '../res', 'arduino_logo_tiny.png'));
 
+function getSvgFromUrl(url) {
+    return new Promise(function(resolve, reject) {
+        request.get(resPath, function(err, response, body) {
+            if (err) reject(err);
+            else resolve(body);
+        });
+    })
+}
+
 app.get('/badge/:repo.svg', async function(req, res) {
     access_logger.logEntry(req);
 
@@ -38,12 +47,10 @@ app.get('/badge/:repo.svg', async function(req, res) {
     resPath = badgeUrl(arduinoLogoBase64, repoName, library);
     
     // serve that badge (svg file) to the user
-    request.get(resPath, function(err, response, body) {
-        if (!err) {
-            res.setHeader('Content-Type', 'image/svg+xml');
-            res.end(body);
-        }
-    });
+    let svg = await getSvgFromUrl(resPath);
+    
+    res.setHeader('Content-Type', 'image/svg+xml');
+    res.end(svg);
 });
 
 app.listen(config.port, '0.0.0.0');
