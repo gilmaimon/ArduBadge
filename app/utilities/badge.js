@@ -1,6 +1,6 @@
 module.exports = function getBadgeResourcePath(base64Logo, repoName, library) {
-    repoName = repoName.replace('-', '--');
-    let version = library? library.version.replace('-', '--'): null;
+    repoName = repoName.split('-').join('--');
+    let version = library? library.version.split('-').join('--'): null;
 
     let baseUrl = `https://img.shields.io/badge/Library Manager-`;
 
