@@ -7,9 +7,11 @@ The badge will show whether the library is available in the Library Manager and 
 
 ## Examples
 Exisitng Libraries:  
+  
 [![arduino-library-badge](http://arduino-library-badge.gilmaimon.xyz:4040/badge/ArduinoCloudStorage.svg)](https://www.arduino.cc/en/guide/libraries) [![arduino-library-badge](http://arduino-library-badge.gilmaimon.xyz:4040/badge/ArduinoComponents.svg)](https://www.arduino.cc/en/guide/libraries) [![arduino-library-badge](http://arduino-library-badge.gilmaimon.xyz:4040/badge/FastLED.svg)](https://www.arduino.cc/en/guide/libraries) [![arduino-library-badge](http://arduino-library-badge.gilmaimon.xyz:4040/badge/HttpClient.svg)](https://www.arduino.cc/en/guide/libraries) [![arduino-library-badge](http://arduino-library-badge.gilmaimon.xyz:4040/badge/MQTT.svg)](https://www.arduino.cc/en/guide/libraries) [![arduino-library-badge](http://arduino-library-badge.gilmaimon.xyz:4040/badge/ArduinoJson.svg)](https://www.arduino.cc/en/guide/libraries)
 
 Non-Existing Libraries:  
+  
 [![arduino-library-badge](http://arduino-library-badge.gilmaimon.xyz:4040/badge/NoWay.svg)](https://www.arduino.cc/en/guide/libraries) [![arduino-library-badge](http://arduino-library-badge.gilmaimon.xyz:4040/badge/Not%20A%20Real%20Library.svg)](https://www.arduino.cc/en/guide/libraries)
 
 # How-To
