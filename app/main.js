@@ -35,7 +35,8 @@ app.get('/badge/:repo.svg', async function(req, res) {
     // serve that badge (svg file) to the user
     request.get(resPath, function(err, response, body) {
         if (!err) {
-            res.send(body);
+            res.setHeader('Content-Type', 'image/svg+xml');
+            res.end(body);
         }
     });
 });
