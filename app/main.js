@@ -4,14 +4,15 @@ let path = require('path');
 let app = require('express')();
 let request = require('request');
 
-let db = require('./db')('127.0.0.1:27017', 'arduino-libs');
-let reloadArduinoLibraries = require('./utilities/reload_libraries.js')
-let badgeUrl = require('./utilities/badge');
-let libraries = require('./libraries');
-
 let config = require('./config');
 
-reloadArduinoLibraries.onInterval(60 * 1000, function(err) {
+let db = require('./db')(config.mongodb_path, config.db_name);
+let libraries_reloader = require('./utilities/reload_libraries.js')
+let badgeUrl = require('./utilities/badge');
+let libraries = require('./libraries');
+let access_logger = require('./access_log');
+
+libraries_reloader.onInterval(1000 * config.libraries_refresh_interval_in_seconds, function(err) {
     if(err) {
         console.log("Failed to Update libs");
     } else {
@@ -25,6 +26,8 @@ let arduinoLogoBase64 = function(filename){
 }(path.join(__dirname, '../res', 'arduino_logo_tiny.png'));
 
 app.get('/badge/:repo.svg', async function(req, res) {
+    access_logger.logEntry(req);
+
     // get repo name
     let repoName = req.params.repo;
     
