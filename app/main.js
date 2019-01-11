@@ -9,6 +9,8 @@ let reloadArduinoLibraries = require('./utilities/reload_libraries.js')
 let badgeUrl = require('./utilities/badge');
 let libraries = require('./libraries');
 
+let config = require('./config');
+
 reloadArduinoLibraries.onInterval(60 * 1000, function(err) {
     if(err) {
         console.log("Failed to Update libs");
@@ -41,4 +43,4 @@ app.get('/badge/:repo.svg', async function(req, res) {
     });
 });
 
-app.listen(80, '0.0.0.0');
+app.listen(config.port, '0.0.0.0');
