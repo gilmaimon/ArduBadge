@@ -23,13 +23,15 @@ Non-Existing Libraries:
 [![arduino-library-badge](http://arduino-library-badge.gilmaimon.xyz/badge/NoWay.svg)](https://www.arduino.cc/en/guide/libraries) [![arduino-library-badge](http://arduino-library-badge.gilmaimon.xyz/badge/Not%20A%20Real%20Library.svg)](https://www.arduino.cc/en/guide/libraries)
 
 ## Contributing
+Contributions are welcomed!
+This section should help you get started.
 ### Dependencies
-In case you would like to run your own instance of the server, you need to first have:
+In order to have your own instance of the server, you need to first have:
 #### Software Dependencies
 - MongoDB instance
 - Node.js & NPM
 
-#### Node Dependencies
+#### Node.js Dependencies
 - express
 - mongoose
 - request
@@ -38,7 +40,7 @@ In case you would like to run your own instance of the server, you need to first
 - rimraf
 ### Installing and Deployment
 Clone the repository, and run:
-1. ```npm install``` - to install all node dependencies
+1. ```npm install``` - to install all Node.js dependencies
 2. ```npm start``` - to start up the server
 
 ## License
