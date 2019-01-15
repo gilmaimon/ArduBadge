@@ -6,6 +6,7 @@ import Header from './components/header'
 import Explanation from './components/explenation'
 import Footer from './components/footer'
 import Pending from './components/pending'
+import DoesNottExist from './components/doesnotexist'
 
 class App extends Component {
     constructor(props) {
@@ -86,7 +87,13 @@ class LibPage extends Component {
                 </div>
             );
         } else if(libraryExists === false) {
-            return "dosent";
+            return (
+                <div>
+                    <Header title="ArduBadge"/>
+                    <DoesNottExist libName={this.state.libname}/>
+                    <Footer />
+                </div>
+            );
         } else {
             return (
                 <div>
