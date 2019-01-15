@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Header from './components/header'
 import Explanation from './components/explenation'
 import Footer from './components/footer'
+import Pending from './components/pending'
 
 class App extends Component {
     constructor(props) {
@@ -72,15 +73,26 @@ class LibPage extends Component {
     }
 
     render() {
-        console.log(this.state.found);
-        return (
-            <div>
-                <Header />
-                <div>Latest version is {this.state.found? this.state.data.version: "unknown"} </div>
-                <Explanation libName={this.state.libname}/>
-                <Footer />
-            </div>
-          );
+        let libraryExists = this.state.found;
+        if(libraryExists === true) {
+            return (
+                <div>
+                    <Header />
+                    <Explanation libName={this.state.libname}/>
+                    <Footer />
+                </div>
+            );
+        } else if(libraryExists === false) {
+            return "dosent";
+        } else {
+            return (
+                <div>
+                    <Header />
+                    <Pending libName={this.state.libname}/>
+                    <Footer />
+                </div>
+            );
+        }
     }
 }
 
