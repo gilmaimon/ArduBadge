@@ -5,6 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "node server/main.js",
+    "prestart": "npm build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "debug": "nodemon server/main.js --ignore tmp/"
   },

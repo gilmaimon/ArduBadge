@@ -1,0 +1,73 @@
+.content {
+    width: 60%;
+    margin: 10px auto;
+}
+
+.what-are-libs {
+    background-color: #ebebeb;
+    border-radius: 20px;
+    padding: 10px 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: #00979D;
+}
+
+p {
+    text-align: justify;
+    color: rgb(79, 95, 116);
+    font-size: 1.15rem;
+    line-height: 2rem;
+}
+
+img {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.optionsContainer {
+    display: flex;
+}
+
+.option {
+    width: 50%;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #00979D;
+    border-color: #00979D;
+    border-style: solid;
+    border-width: 2px;
+    color:  rgb(243, 255, 255);
+    text-decoration: none;
+}
+
+.option:nth-child(1){
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.option:nth-child(2){
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.active {
+    background-color: white;
+    color: #00979D;
+    font-weight: bold;
+}
+
+.libname {
+    background: #ebebeb;
+    padding: 2px 1px;
+}
+
+.phrase {
+    font-weight: bold;
+}
