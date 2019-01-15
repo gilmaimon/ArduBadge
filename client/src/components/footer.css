@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.appFooter {
+    margin-top: 50px;
+    height: 100px;
+    background-color: #00979D;
+}
+  
+.footerText {
+    padding-top: 70px;
+    text-align: center;
+    color: white;
+    font-size: 1rem;
+}

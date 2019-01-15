@@ -35,7 +35,7 @@ function getSvgFromUrl(url) {
     })
 }
 
-app.use(express.static(path.join(__dirname, 'ui/build')));
+app.use(express.static(path.join(__dirname, '../client/build')));
 app.get('/badge/:repo.svg', async function(req, res) {
     access_logger.logEntry(req);
 
@@ -74,7 +74,7 @@ app.get('/library/:libname', async function(req, res) {
 })
 
 app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'ui/public/index.html'))
+    res.sendFile(path.join(__dirname, '../client/build/index.html'))
 });
 
 app.listen(config.port, '0.0.0.0');
