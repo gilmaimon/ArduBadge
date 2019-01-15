@@ -4,7 +4,7 @@ import './header.css'
 function Header (props) {
     return (
         <div class="appHeader">
-            <p class="appTitle">ArduBadge</p>
+            <p class="appTitle">{props.title}</p>
         </div>
     );
 }
