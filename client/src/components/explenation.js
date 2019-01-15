@@ -85,7 +85,8 @@ function ZipExplanation(props) {
 
 function Explanation (props) {
     let library = props.library;
-    let libName = library.name;
+    let libName = <span class="libname">{library.name}</span>
+
     return (
         <div class="explContainer">
             <div class="content what-are-libs">
@@ -98,7 +99,7 @@ function Explanation (props) {
                     additional libraries, you will need to install them.</p>
             </div>
             <div class="content">
-                <h2>What is {library.name}? </h2>
+                <h2>How to Install {libName}</h2>
                 <p>{library.sentence} {library.paragraph} </p>
                 <div>
             </div>
