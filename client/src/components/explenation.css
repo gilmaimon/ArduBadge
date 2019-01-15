@@ -22,6 +22,10 @@ p {
     line-height: 2rem;
 }
 
+.mini {
+    font-size: 1rem;
+}
+
 img {
     margin-top: 50px;
     margin-bottom: 50px;

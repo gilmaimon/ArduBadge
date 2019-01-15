@@ -110,6 +110,11 @@ function Explanation (props) {
             <Route exact path="/:libname/" component={() => <LibraryManagerExplanation library={library}/>} />
             <Route exact path="/:libname/ide" component={() => <LibraryManagerExplanation library={library}/>} />
             <Route exact path="/:libname/zip" component={() => <ZipExplanation library={library}/>}  />
+            <div class="content">
+                <p class="mini">
+                    Credit: This text is heavly based on the <a href="https://www.arduino.cc/en/guide/libraries">official arduino guide</a>.
+                </p>
+            </div>
         </div>
       );
 
