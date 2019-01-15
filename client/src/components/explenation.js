@@ -11,14 +11,16 @@ function ActionPhrase(props) {
 }
 
 function LibraryManagerExplanation(props) {
-    let libName = <span class="libname">{props.libName}</span>
+    let library = props.library;
+    let latestVersion = library.version;
+    let libName = <span class="libname">{library.name}</span>
     return (
         <div class="explContainer">
             <div class="content">
                 <h2>How to Install {libName}</h2>
                 <div class="optionsContainer">
-                    <Link to={`/${props.libName}/ide`} class="option active">Using the Library Manager</Link>
-                    <Link to={`/${props.libName}/zip`} class="option">From a ZIP File</Link>
+                    <Link to={`/${library.name}/ide`} class="option active">Using the Library Manager</Link>
+                    <Link to={`/${library.name}/zip`} class="option">From a ZIP File</Link>
                 </div>
             </div>
             <div class="content how-to-install">
@@ -34,7 +36,8 @@ function LibraryManagerExplanation(props) {
                     scroll the list to find it and <ActionPhrase body="click on it"/>.</p>
                 
                 <img src="/libs_manager.png"/>
-                <p>Finally click on <ActionPhrase body="install"/> and wait for the IDE to install {libName}. 
+                <p>You should see the latest version of {libName} (version <IdePhrase body={latestVersion}/>) listed.
+                    Finally click on <ActionPhrase body="install"/> and wait for the IDE to install {libName}. 
                     Downloading may take time depending on your connection speed. Once it 
                     has finished, an Installed tag should appear next to the {libName} library. 
                     You can close the <IdePhrase body="Library Manager"/>.</p>            
@@ -46,18 +49,23 @@ function LibraryManagerExplanation(props) {
 }
 
 function ZipExplanation(props) {
-    let libName = <span class="libname">{props.libName}</span>
+    let library = props.library;
+    let libName = <span class="libname">{library.name}</span>
     return (
         <div class="explContainer">
             <div class="content">
                 <h2>How to Install {libName}</h2>
                 <div class="optionsContainer">
-                    <Link to={`/${props.libName}/ide`} class="option">Using the Library Manager</Link>
-                    <Link to={`/${props.libName}/zip`} class="option active">From a ZIP File</Link>
+                    <Link to={`/${library.name}/ide`} class="option">Using the Library Manager</Link>
+                    <Link to={`/${library.name}/zip`} class="option active">From a ZIP File</Link>
                 </div>
             </div>
             <div class="content how-to-install">
-                <p>{libName} can also be installed as a <IdePhrase body="ZIP" /> file. Inside the zip will 
+                <p>{libName} can also be installed as a <IdePhrase body="ZIP" /> file. 
+                The latest version's (<IdePhrase body={library.version}/>) ZIP 
+                file is available for <a href={library.url}><ActionPhrase body="Download Here"/></a>.
+                </p>
+                <p>Inside the zip will 
                     be <IdePhrase body=".cpp" /> files, <IdePhrase body="header" /> files and other files required by the library. 
                     Do not unzip the downloaded library, leave it as is.</p> 
                 <p>In the <IdePhrase body="Arduino IDE" />, navigate to <ActionPhrase body="Sketch > Include Library > Add .ZIP Library" />
@@ -76,21 +84,28 @@ function ZipExplanation(props) {
 }
 
 function Explanation (props) {
-    let libName = props.libName;
+    let library = props.library;
+    let libName = library.name;
     return (
         <div class="explContainer">
             <div class="content what-are-libs">
                 <h2>What are Libraries?</h2>
                 <p>Libraries are a collection of code that makes it easy for you to 
-                    connect to a sensor, display, module, etc. For example, the built-in
+                    connect to a sensor, display, module, etc. For example, the library
                     LiquidCrystal library makes it easy to talk to character LCD
-                    displays. There are hundreds of additional libraries available 
-                    on the Internet for download. The built-in libraries and some of 
-                    these additional libraries are listed in the reference. To use the 
+                    displays. There are many additional libraries available 
+                    on the Internet for download. To use the 
                     additional libraries, you will need to install them.</p>
             </div>
-            <Route path="/:libname/ide" component={() => <LibraryManagerExplanation libName={libName}/>} />
-            <Route path="/:libname/zip" component={() => <ZipExplanation libName={libName}/>}  />
+            <div class="content">
+                <h2>What is {library.name}? </h2>
+                <p>{library.sentence} {library.paragraph} </p>
+                <div>
+            </div>
+            <br/>
+            </div>
+            <Route path="/:libname/ide" component={() => <LibraryManagerExplanation library={library}/>} />
+            <Route path="/:libname/zip" component={() => <ZipExplanation library={library}/>}  />
         </div>
       );
 
