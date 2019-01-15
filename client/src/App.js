@@ -47,7 +47,10 @@ class App extends Component {
     render() {
         return (
             <Router>
-                <Route path="/:libname/:type" component={libPage} />
+                <div>
+                    <Route exact path="/:libname/:type" component={libPage} />
+                    <Route exact path="/:libname" component={libPage} />
+                </div>
             </Router>
         );
     }
