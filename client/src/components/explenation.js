@@ -105,8 +105,9 @@ function Explanation (props) {
             </div>
             <br/>
             </div>
-            <Route path="/:libname/ide" component={() => <LibraryManagerExplanation library={library}/>} />
-            <Route path="/:libname/zip" component={() => <ZipExplanation library={library}/>}  />
+            <Route exact path="/:libname/" component={() => <LibraryManagerExplanation library={library}/>} />
+            <Route exact path="/:libname/ide" component={() => <LibraryManagerExplanation library={library}/>} />
+            <Route exact path="/:libname/zip" component={() => <ZipExplanation library={library}/>}  />
         </div>
       );
 
