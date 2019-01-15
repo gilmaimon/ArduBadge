@@ -36,8 +36,8 @@ function LibraryManagerExplanation(props) {
                     scroll the list to find it and <ActionPhrase body="click on it"/>.</p>
                 
                 <img src="/libs_manager.png"/>
-                <p>You should see the latest version of {libName} (version <IdePhrase body={latestVersion}/>) listed.
-                    Finally click on <ActionPhrase body="install"/> and wait for the IDE to install {libName}. 
+                <p>You should see the latest version of {libName} (version <IdePhrase body={latestVersion}/>) listed.</p>
+                <p>Finally click on <ActionPhrase body="install"/> and wait for the IDE to install {libName}. 
                     Downloading may take time depending on your connection speed. Once it 
                     has finished, an Installed tag should appear next to the {libName} library. 
                     You can close the <IdePhrase body="Library Manager"/>.</p>            
@@ -90,7 +90,7 @@ function Explanation (props) {
     return (
         <div class="explContainer">
             <div class="content what-are-libs">
-                <h2>What are Libraries?</h2>
+                <h2>What are Arduino Libraries?</h2>
                 <p>Libraries are a collection of code that makes it easy for you to 
                     connect to a sensor, display, module, etc. For example, the library
                     LiquidCrystal library makes it easy to talk to character LCD
@@ -99,8 +99,10 @@ function Explanation (props) {
                     additional libraries, you will need to install them.</p>
             </div>
             <div class="content">
-                <h2>How to Install {libName}</h2>
+                <h2>What is {libName}?</h2>
                 <p>{library.sentence} {library.paragraph} </p>
+                <p>Made by: <a href={library.repository}>{library.author}</a> </p>
+                <p><a href={library.website}>Visit the official website.</a></p>
                 <div>
             </div>
             <br/>
