@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import './App.css'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-import Header from './components/header'
-import Explanation from './components/explenation'
-import Footer from './components/footer'
-import Pending from './components/pending'
-import DoesNottExist from './components/doesnotexist'
+import Header from './components/common/header'
+import Footer from './components/common/footer'
+
+import Explanation from './components/explanation/explenation'
+import Pending from './components/explanation/pending'
+import DoesNottExist from './components/explanation/doesnotexist'
 
 class App extends Component {
     constructor(props) {
