@@ -7,7 +7,7 @@ import Footer from './components/common/footer'
 
 import Explanation from './components/explanation/explenation'
 import Pending from './components/explanation/pending'
-import DoesNottExist from './components/explanation/doesnotexist'
+import DoesNotExist from './components/explanation/doesnotexist'
 
 import Home from './components/home/home'
 
@@ -79,7 +79,7 @@ class LibPage extends Component {
             return (
                 <div>
                     <Header title="ArduBadge"/>
-                    <DoesNottExist libName={this.state.libname}/>
+                    <DoesNotExist libName={this.state.libname}/>
                     <Footer />
                 </div>
             );
