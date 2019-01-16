@@ -24,7 +24,7 @@ libraries_reloader.onInterval(1000 * config.libraries_refresh_interval_in_second
     }
 });
 
-
+access_logger.cacheOnInterval(1000 * config.stats_refresh_interval_in_seconds);
 
 let arduinoLogoBase64 = function(filename){
     var bitmap = fs.readFileSync(filename);
