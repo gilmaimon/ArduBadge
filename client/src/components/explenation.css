@@ -26,7 +26,7 @@ p {
     font-size: 1rem;
 }
 
-img {
+.explanationImg {
     margin-top: 50px;
     margin-bottom: 50px;
     max-width: 100%;
