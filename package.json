@@ -4,9 +4,9 @@
   "description": "An app to allow Arduino library makers to badge their repo's and notify users that their library is available via the built-in Arduino Library Manager.",
   "main": "main.js",
   "scripts": {
-    "start": "node app/main.js",
+    "start": "node server/main.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "debug": "nodemon app/main.js --ignore tmp/"
+    "debug": "nodemon server/main.js --ignore tmp/"
   },
   "repository": {
     "type": "git",
