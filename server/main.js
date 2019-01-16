@@ -86,11 +86,18 @@ app.get('/library/:libname', async function(req, res) {
 // get most watched
 app.get('/stats/top/week', function(req, res) {
     //return most watched libraries in the last week
+    res.send("NotImplemented");
 })
 
 // get recently added
-app.get('/stats/recent', function(req, res) {
+app.get('/stats/recent', async function(req, res) {
     //return the last libraries to be acccessed for the first time
+    try {
+        let recentlyWatched = await access_logger.recentNewLibnames(10);
+        res.json(recentlyWatched);
+    } catch(err) {
+        res.json([]);
+    }
 })
 
 app.listen(config.port, '0.0.0.0');

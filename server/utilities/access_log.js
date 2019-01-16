@@ -4,7 +4,7 @@ module.exports = {
     logEntry: function(req, action) {
         return new Promise(function(resolve, reject) {
             let entry = new AccessEntryModel({
-                repo_name: req.params.libname,
+                name: req.params.libname,
                 ip: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
                 action: action
             });
@@ -13,5 +13,42 @@ module.exports = {
                 else resolve();
             })
         })
+    },
+
+    recentNewLibnames: function(num) {
+        return new Promise(function(resolve, reject) {
+            AccessEntryModel.aggregate([
+                { $group: { _id: "$name", first_time: { $min: "$time" } } },
+                { $sort: { firstTime: -1 } },
+                { $limit: num },
+                { $lookup: {
+                    from: 'libraries',
+                    localField: '_id',
+                    foreignField: 'name',
+                    as: 'library'
+                }},
+                { $project: {
+                    joint: { $slice: ["$library", -1]}
+                }}
+            ], function(err, data) {
+                    if(err) {
+                        reject(err);
+                        return;
+                    }  
+
+                    let result = []
+                    for(let i = 0; i < data.length; i++) {
+                        result.push({
+                            name: data[i]._id,
+                            version: data[i].joint[0].version,
+                            author: data[i].joint[0].author,
+                            website: data[i].joint[0].website
+                        });
+                    }
+
+                    resolve(result);
+                }
+            );
+        });
     }
 }
