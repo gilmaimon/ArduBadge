@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './explenation.css'
-import { BrowserRouter as BrowserRouter, Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as BrowserRouter, Router, Route, Link, Redirect, Switch } from "react-router-dom";
 
 function IdePhrase(props) {
     return <span class="phrase">{props.body}</span>;
@@ -108,9 +108,10 @@ function Explanation (props) {
             </div>
             <br/>
             </div>
-            <Route exact path="/:libname/" component={() => <LibraryManagerExplanation library={library}/>} />
-            <Route exact path="/:libname/ide" component={() => <LibraryManagerExplanation library={library}/>} />
-            <Route exact path="/:libname/zip" component={() => <ZipExplanation library={library}/>}  />
+            <Switch>
+                <Route exact path="/:libname/zip" component={() => <ZipExplanation library={library}/>}  />
+                <Route path="/:libname" component={() => <LibraryManagerExplanation library={library}/>} />
+            </Switch>
             <div class="content">
                 <p class="mini">
                     Credit: This text is heavly based on the <a href="https://www.arduino.cc/en/guide/libraries">official arduino guide</a>.

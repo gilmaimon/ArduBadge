@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Header from './components/common/header'
 import Footer from './components/common/footer'
@@ -8,6 +8,8 @@ import Footer from './components/common/footer'
 import Explanation from './components/explanation/explenation'
 import Pending from './components/explanation/pending'
 import DoesNottExist from './components/explanation/doesnotexist'
+
+import Home from './components/home/home'
 
 class App extends Component {
     constructor(props) {
@@ -31,28 +33,14 @@ class App extends Component {
         }
         
     }
-
-//<Input value={this.state.badgeSrc} width={this.state.width} onChange={this.onLibnameChange}></Input>
-//<img src={this.state.badgeSrc} />
-/*
-<body>
-                <div class="appHeader">
-                    <p class="appTitle">ArduBadge</p>
-                </div>
-                <div class="contentContainer">
-                    <div class="leftItem">aaa</div>
-                    <div class="rightItem">bbb</div>
-                </div>
-            </body>
-            */
-
+    
     render() {
         return (
             <Router>
-                <div>
-                    <Route exact path="/:libname/:type" component={libPage} />
-                    <Route exact path="/:libname" component={libPage} />
-                </div>
+                <Switch>
+                    <Route path="/:libname" component={libPage} />
+                    <Route path="/" component={Home} />
+                </Switch>
             </Router>
         );
     }
