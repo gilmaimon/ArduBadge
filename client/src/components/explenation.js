@@ -29,13 +29,13 @@ function LibraryManagerExplanation(props) {
                     IDE and click to the <ActionPhrase body="Sketch" /> menu and  
                     then <ActionPhrase body="Include Library > Manage Libraries." /></p>
 
-                <img src="/manage_libs.png"/>
+                <img class="explanationImg" src="/manage_libs.png"/>
                 <p>Then the Library Manager will open and you will find a list of libraries 
                     that are already installed or ready for installation. In order to 
                     install {libName}, search for "{libName}", 
                     scroll the list to find it and <ActionPhrase body="click on it"/>.</p>
                 
-                <img src="/libs_manager.png"/>
+                <img class="explanationImg" src="/libs_manager.png"/>
                 <p>You should see the latest version of {libName} (version <IdePhrase body={latestVersion}/>) listed.</p>
                 <p>Finally click on <ActionPhrase body="install"/> and wait for the IDE to install {libName}. 
                     Downloading may take time depending on your connection speed. Once it 
@@ -71,10 +71,10 @@ function ZipExplanation(props) {
                 <p>In the <IdePhrase body="Arduino IDE" />, navigate to <ActionPhrase body="Sketch > Include Library > Add .ZIP Library" />
                     . At the top of the drop down list, select the 
                      option to <ActionPhrase body="Add .ZIP Library"/>.</p>
-                <img src="/add_zip.png"/>
+                <img class="explanationImg" src="/add_zip.png"/>
                 <p>You will be prompted to select the {libName} <IdePhrase body="ZIP" />-file. <ActionPhrase body="Navigate" /> to 
                     the downloaded {libName} .zip file location and <ActionPhrase body="open" /> it.</p>
-                <img src="/choose_zip.png"/>
+                <img class="explanationImg" src="/choose_zip.png"/>
                 <p>Return to the <ActionPhrase body="Sketch > Include Library" /> menu. You should now 
                     see {libName} at the bottom of the drop-down menu. It is 
                     ready to be used in your sketch. </p>
@@ -99,6 +99,7 @@ function Explanation (props) {
                     additional libraries, you will need to install them.</p>
             </div>
             <div class="content">
+                <img class="badge" src={`badge/${library.name}.svg`} />
                 <h2>What is {libName}?</h2>
                 <p>{library.sentence} {library.paragraph} </p>
                 <p>Made by: <a href={library.repository}>{library.author}</a> </p>
