@@ -3,6 +3,28 @@ import { BeatLoader } from 'react-spinners';
 
 import './home.css'
 
+import Header from '../common/header'
+import Footer from '../common/footer'
+
+class InteractiveBadgeInput extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {}
+    }
+
+    render() {
+        return (
+            <div>
+                <span>http://localhost/badge/</span>
+                <input></input>
+                <span>.svg</span>
+            </div>
+        );
+    }
+}
+
+
+
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -13,8 +35,12 @@ class Home extends Component {
 
     render() {
         return (
-            <div class="homeWrapper">
-                Home
+            <div>
+                <Header title="ArduBadge"/>
+                <div class="content homeWrapper">
+                    <InteractiveBadgeInput />
+                </div>
+                <Footer />
             </div>
         );
     }

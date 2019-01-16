@@ -7,11 +7,12 @@
 }
   
 .appTitle {
-    padding: 40px;
+    padding: 30px;
     padding-left: 20px;
     margin: 0px;
     color: white;
     font-size: 2.5rem;
+    text-decoration: none;
 }
 
 .topright {
