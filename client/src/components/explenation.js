@@ -99,7 +99,7 @@ function Explanation (props) {
                     additional libraries, you will need to install them.</p>
             </div>
             <div class="content">
-                <img class="badge" src={`badge/${library.name}.svg`} />
+                <img class="badge" src={`/badge/${library.name}.svg`} />
                 <h2>What is {libName}?</h2>
                 <p>{library.sentence} {library.paragraph} </p>
                 <p>Made by: <a href={library.repository}>{library.author}</a> </p>
