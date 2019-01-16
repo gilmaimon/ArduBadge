@@ -12,7 +12,7 @@ function DoesNotExist (props) {
             </p>
             <p>
                 There might be a typo in the library name or the library
-                might not be pulished yet. If you want to add your own library 
+                might not be published yet. If you want to add your own library 
                 to Library Manager, follow <a href="https://github.com/arduino/Arduino/wiki/Library-Manager-FAQ#how-can-i-add-my-library-to-library-manager">these instructions</a>
             </p>
         </div>
