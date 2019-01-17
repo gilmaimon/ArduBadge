@@ -96,6 +96,8 @@ class Home extends Component {
                 </div>
                 <div className="rightContent">
                     <RecentlyStartedWatching />
+                    <br/>
+                    <h3> Open on Github </h3>
                     <div className="githubLogoWrapper">    
                         <a className="githubLink" href="https://github.com/gilmaimon/Arduino-Library-Manager-Badge">
                             <img className="githubLogo" alt="Github Logo" src="/github_logo.png" />
