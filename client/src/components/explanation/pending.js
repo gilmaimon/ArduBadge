@@ -13,7 +13,7 @@ class Pending extends Component {
 
     render() {
         return (
-            <div className="pendingWrapper">
+            <div className="main">
                 <div className="pendingExplain">
                     <h1 className="pendingTitle">We are collecting data on <span className="libnameSpan">"{this.props.libName}"</span></h1>
                     <div className="spinnerWrapper">

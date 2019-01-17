@@ -4,7 +4,7 @@ import { BrowserRouter as NavLink } from "react-router-dom";
 
 function DoesNotExist (props) {
     return (
-        <div className="content">
+        <div className="main">
             <br/>
             <h2>Whoops.</h2>
             <p>

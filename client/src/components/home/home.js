@@ -29,7 +29,6 @@ class InteractiveBadgeInput extends Component {
     render() {
         return (
             <div>
-                
                 <div className="interactiveWrapper">
                     <span className="badgePrefix">{this.domainHttpPrefix}/badge/</span>
                     <AutosizeInput
@@ -65,7 +64,7 @@ class Home extends Component {
         return (
             <div>
                 <Header title="ArduBadge"/>
-                <div className="homeWrapper">
+                <div className="main homeWrapper">
                 <div className="leftContent">
                     <h2>What is ArduBadge?</h2>
                     <p>Arduino Library Manger Badge (or <span className="homeSpan">ArduBadge</span>) is a way to help new and experienced

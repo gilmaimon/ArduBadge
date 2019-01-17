@@ -1,12 +1,8 @@
-.content {
-    width: 60%;
-    margin: 10px auto;
-}
-
 .what-are-libs {
     background-color: #ebebeb;
     border-radius: 20px;
     padding: 10px 40px;
+    margin: 0px -30px;
     margin-top: 40px;
     margin-bottom: 40px;
 }

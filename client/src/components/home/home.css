@@ -1,13 +1,5 @@
 .homeWrapper {
     display: flex;
-    padding: 0px 10%;
-    margin-top: 40px;
-}
-
-@media only screen and (min-width: 1500px) {
-    .homeWrapper {
-        padding: 0px 20%;
-    }
 }
 
 .leftContent {

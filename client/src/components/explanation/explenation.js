@@ -15,15 +15,15 @@ function LibraryManagerExplanation(props) {
     let latestVersion = library.version;
     let libName = <span className="libname">{library.name}</span>
     return (
-        <div className="explContainer">
-            <div className="content">
+        <div>
+            <div>
                 <h2>How to Install {libName}</h2>
                 <div className="optionsContainer">
                     <Link to={`/${library.name}/ide`} className="option active">Using the Library Manager</Link>
                     <Link to={`/${library.name}/zip`} className="option">From a ZIP File</Link>
                 </div>
             </div>
-            <div className="content how-to-install">
+            <div className="how-to-install">
                 <p>To install {libName} into your <IdePhrase body="Arduino IDE" /> you can use  
                     the <IdePhrase body="Library Manager"/> (available from IDE version 1.6.2). Open the 
                     IDE and click to the <ActionPhrase body="Sketch" /> menu and  
@@ -52,15 +52,15 @@ function ZipExplanation(props) {
     let library = props.library;
     let libName = <span className="libname">{library.name}</span>
     return (
-        <div className="explContainer">
-            <div className="content">
+        <div>
+            <div>
                 <h2>How to Install {libName}</h2>
                 <div className="optionsContainer">
                     <Link to={`/${library.name}/ide`} className="option">Using the Library Manager</Link>
                     <Link to={`/${library.name}/zip`} className="option active">From a ZIP File</Link>
                 </div>
             </div>
-            <div className="content how-to-install">
+            <div className="how-to-install">
                 <p>{libName} can also be installed as a <IdePhrase body="ZIP" /> file. 
                 The latest version's (<IdePhrase body={library.version}/>) ZIP 
                 file is available for <a href={library.url}><ActionPhrase body="Download Here"/></a>.
@@ -88,8 +88,8 @@ function Explanation (props) {
     let libName = <span className="libname">{library.name}</span>
 
     return (
-        <div className="explContainer">
-            <div className="content what-are-libs">
+        <div className="main">
+            <div className="what-are-libs">
                 <h2>What are Arduino Libraries?</h2>
                 <p>Libraries are a collection of code that makes it easy for you to 
                     connect to a sensor, display, module, etc. For example, the library
@@ -98,7 +98,7 @@ function Explanation (props) {
                     on the Internet for download. To use the 
                     additional libraries, you will need to install them.</p>
             </div>
-            <div className="content">
+            <div>
                 <img alt="markdown library badge" className="badge" src={`/badge/${library.name}.svg`} />
                 <h2>What is {libName}?</h2>
                 <p>{library.sentence} {library.paragraph} </p>

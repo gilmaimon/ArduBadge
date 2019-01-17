@@ -3,23 +3,18 @@
 * {
   font-family: 'Roboto', sans-serif;
 }
+
 body {
   background-color: #fcffff;
 }
 
-
-.contentContainer {
-  display: flex;
-  margin: 10px 50px;
-  flex-direction: row;
+.main {
+  padding: 0px 10%;
+  margin-top: 40px;
 }
 
-.leftItem {
-  background-color: red;
-  width: 75%;
-}
-
-.rightItem {
-  background-color: green;
-  width: 50%;
+@media only screen and (min-width: 1500px) {
+  .main {
+      padding: 0px 25%;
+  }
 }
