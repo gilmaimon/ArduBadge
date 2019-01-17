@@ -3,14 +3,14 @@ import './recently.css'
 
 function Item(props) {
     return (
-        <div className="linkLibWrapper" href={`/${props.library.name}`}>
+        <a className="linkLibWrapper" href={`/${props.library.name}`}>
             <div className="libItemWrapper">
                 <div className="leftColoredTag" />
                 <span className="spanLibName">
                     {props.library.name + ` ` + props.library.version}
                 </span>
             </div>
-        </div>
+        </a>
     );
 }
 
