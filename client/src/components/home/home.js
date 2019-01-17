@@ -41,7 +41,7 @@ class InteractiveBadgeInput extends Component {
                         <img alt="markdown badge" className="badgeImg" src={`/badge/${this.state.libname}.svg`}/>
                     </a>
                 </div>
-                <h3>Use This Markdown</h3>
+                <h4>Use This Markdown</h4>
                 <p className="markdownCode">
                     ![![arduino-library-badge]({this.domainHttpPrefix}/badge/{this.state.libname}.svg)]({this.domainHttpPrefix}/{this.state.libname})
                 </p>
@@ -63,7 +63,7 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <Header title="ArduBadge"/>
+                <Header primary="ArduBadge"/>
                 <div className="main homeWrapper">
                 <div className="leftContent">
                     <h2>What is ArduBadge?</h2>

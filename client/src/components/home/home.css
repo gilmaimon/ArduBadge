@@ -22,6 +22,7 @@
 }
 
 .badgeInput {
+    margin-top: 15px;
     font-size: 18px;
     border: none;
     padding: 1px;
@@ -29,6 +30,10 @@
     border-radius: 5px;
     color: #00979D;
     margin-bottom: 13px;
+}
+
+h4 {
+    color: #00979D;
 }
 
 .badgePostfix {
@@ -40,7 +45,7 @@
     padding: none;
     margin: none;
     margin-left: 10px;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .badgeWrapper {

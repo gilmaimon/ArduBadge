@@ -33,6 +33,13 @@ class RecentlyStartedWatching extends Component {
         fetch("/stats/recent")
             .then(response => response.json())
             .then(data => this.setState({libraries: data}));
+
+        setInterval(function() {
+            console.log("Fetching recent");
+            fetch("/stats/recent")
+            .then(response => response.json())
+            .then(data => this.setState({libraries: data}));
+        }.bind(this), 10 * 1000);
     }
 
     render() {

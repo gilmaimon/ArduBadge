@@ -8,14 +8,26 @@
   
 .appTitle {
     padding: 30px;
-    padding-left: 20px;
-    margin: 0px;
+    padding-left: 50px;
     color: white;
     font-size: 2.5rem;
     text-decoration: none;
+    font-weight: bold;
+}
+
+.appSubtitle {
+    font-weight: bold;
+    font-size: 2rem;
+    background: white;
+    color: #00979D;
+    padding: 2px 4px;
+    margin-left: 7px;
 }
 
 .topright {
     margin-left: 30px;
     margin-top: 40px;
+}
+
+.appTitle:hover {
 }

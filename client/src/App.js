@@ -70,7 +70,7 @@ class LibPage extends Component {
         if(libraryExists === true) {
             return (
                 <div>
-                    <Header title={`ArduBadge | ${this.state.data.name}`} />
+                    <Header primary="ArduBadge" secondary={this.state.data.name} />
                     <Explanation library={this.state.data}/>
                     <Footer />
                 </div>
