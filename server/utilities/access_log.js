@@ -7,7 +7,7 @@ const NUM_RECENTLY_WATCHED = 10;
 function cacheRecentlyStartedWatching() {    
     AccessEntryModel.aggregate([
         { $group: { _id: "$name", first_time: { $min: "$time" } } },
-        { $sort: { firstTime: -1 } },
+        { $sort: { first_time: -1 } },
         { $limit: NUM_RECENTLY_WATCHED },
         { $lookup: {
             from: 'libraries',
