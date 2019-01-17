@@ -13,8 +13,39 @@ body {
   margin-top: 40px;
 }
 
+h4 {
+  color: #00979D;
+}
+
+h2 {
+  color: #00979D;
+}
+
+h3 {
+  color: #00979D;
+  text-decoration: underline;
+}
+
+p {
+  text-align: justify;
+  color: rgb(79, 95, 116);
+  font-size: 1.15rem;
+  line-height: 2rem;
+}
+
 @media only screen and (min-width: 1500px) {
   .main {
       padding: 0px 25%;
+  }
+}
+
+@media (max-width:700px) {
+  p {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
+
+  .main {
+    margin-top: 5px;
   }
 }

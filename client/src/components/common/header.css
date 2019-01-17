@@ -3,16 +3,35 @@
 .appHeader {
     height: 110px;
     background-color: #00979D;
-    display: flex;
+    padding-left: 10px;
 }
-  
+
+.titleSubtitleContainer {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    
+    padding-top: 25px;
+}
+
+.singleTitleSubtitleContainer {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    
+    padding-top: 25px;
+}
+
 .appTitle {
-    padding: 30px;
-    padding-left: 50px;
     color: white;
     font-size: 2.5rem;
     text-decoration: none;
     font-weight: bold;
+    margin-left: 10px;
+}
+
+.subtitleWrapper {
+    margin-top: 7px;
 }
 
 .appSubtitle {
@@ -24,10 +43,22 @@
     margin-left: 7px;
 }
 
-.topright {
-    margin-left: 30px;
-    margin-top: 40px;
-}
 
 .appTitle:hover {
+    
+}
+
+@media (max-width:600px) {
+    .titleSubtitleContainer {
+        flex-direction: column;
+    }
+
+    .titleSubtitleContainer {
+        margin-top: 0px;
+        padding-top: 7px;
+    }
+
+    .subtitleWrapper {
+        margin-top: 3px;
+    }
 }

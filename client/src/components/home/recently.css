@@ -8,8 +8,6 @@
 
     display: flex;
     width: 100%;
-
-    color: black;
 }
 
 .linkLibWrapper {
@@ -28,8 +26,7 @@
 }
 
 .spanLibName {
-}
-
-.spanVersion {
-
+    color: black;
+    word-wrap:break-word;
+    table-layout: fixed;
 }

@@ -6,17 +6,19 @@ function Header (props) {
     if(props.secondary) {
         return (
             <div className="appHeader">
-                <Link to="/" className="appTitle">
-                <span>{props.primary}</span>
-                <span className="appSubtitle">{props.secondary}</span>
+                <Link to="/" className="titleSubtitleContainer">
+                    <span className="appTitle">{props.primary}</span>
+                    <div className="subtitleWrapper">
+                        <span className="appSubtitle">{props.secondary}</span>
+                    </div>
                 </Link>
             </div>
         );
     } else {
         return (
             <div className="appHeader">
-                <Link to="/" className="appTitle">
-                    <span>{props.primary}</span>
+                <Link to="/" className="singleTitleSubtitleContainer">
+                    <span className="appTitle">{props.primary}</span>
                 </Link>
             </div>
         );

@@ -7,22 +7,6 @@
     margin-bottom: 40px;
 }
 
-h2 {
-    color: #00979D;
-}
-
-h3 {
-    color: #00979D;
-    text-decoration: underline;
-}
-
-p {
-    text-align: justify;
-    color: rgb(79, 95, 116);
-    font-size: 1.15rem;
-    line-height: 2rem;
-}
-
 .mini {
     font-size: 1rem;
 }
@@ -76,4 +60,19 @@ p {
 .phrase {
     font-weight: bold;
     text-decoration: transparent;
+}
+
+
+@media (max-width:600px) {
+    .what-are-libs {
+        border-radius: 15px;
+        padding: 1px 30px;
+        margin: 0px -20px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .option {
+        font-size: 14px;
+    }
 }

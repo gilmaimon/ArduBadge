@@ -78,7 +78,7 @@ class LibPage extends Component {
         } else if(libraryExists === false) {
             return (
                 <div>
-                    <Header title="ArduBadge"/>
+                    <Header primary="ArduBadge"/>
                     <DoesNotExist libName={this.state.libname}/>
                     <Footer />
                 </div>
@@ -86,7 +86,7 @@ class LibPage extends Component {
         } else {
             return (
                 <div>
-                    <Header title="ArduBadge"/>
+                    <Header primary="ArduBadge"/>
                     <Pending libName={this.state.libname}/>
                     <Footer />
                 </div>

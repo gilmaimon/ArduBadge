@@ -11,6 +11,21 @@
     padding-left: 50px;
 }
 
+@media (max-width:700px) {
+    .homeWrapper {
+        flex-direction: column-reverse;
+    }
+
+    .leftContent {
+        width: 100%;
+    }
+    
+    .rightContent {
+        width: 100%;
+        padding-left: 0px;
+    }
+}
+
 .interactiveWrapper {
     border-radius: 5px;
     background-color: #f0f0f0;
@@ -30,10 +45,6 @@
     border-radius: 5px;
     color: #00979D;
     margin-bottom: 13px;
-}
-
-h4 {
-    color: #00979D;
 }
 
 .badgePostfix {
