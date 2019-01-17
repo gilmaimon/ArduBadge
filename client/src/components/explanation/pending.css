@@ -20,5 +20,5 @@
 }
 
 .libnameSpan {
-    color: #00979D;
+    color: var(--main-color);
 }

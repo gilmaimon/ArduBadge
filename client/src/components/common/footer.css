@@ -3,7 +3,7 @@
 .appFooter {
     margin-top: 50px;
     height: 100px;
-    background-color: #00979D;
+    background-color: var(--main-color);
 }
   
 .footerText {

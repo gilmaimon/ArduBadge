@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+:root {
+  --main-color:#00979D;
+}
+
 * {
   font-family: 'Roboto', sans-serif;
 }
@@ -14,15 +18,15 @@ body {
 }
 
 h4 {
-  color: #00979D;
+  color: var(--main-color);
 }
 
 h2 {
-  color: #00979D;
+  color: var(--main-color);
 }
 
 h3 {
-  color: #00979D;
+  color: var(--main-color);
 }
 
 p {
