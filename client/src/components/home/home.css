@@ -1,0 +1,56 @@
+.homeWrapper {
+    display: flex;
+    padding: 0px 20%;
+    margin-top: 40px;
+}
+
+
+.leftContent {
+    width: 70%;
+}
+
+.rightContent {
+    width: 30%;
+    padding-left: 50px;
+}
+
+.interactiveWrapper {
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    padding-left: 15px;
+}
+
+.badgePrefix {
+    font-size: 18px;
+}
+
+.badgeInput {
+    font-size: 18px;
+    border: none;
+    padding: 1px;
+    background: none;
+    border-radius: 5px;
+    color: #00979D;
+    margin-bottom: 13px;
+}
+
+.badgePostfix {
+    font-size: 18px;
+}
+
+.badgeImg {
+    border: none;
+    padding: none;
+    margin: none;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.badgeWrapper {
+}
+
+.markdownCode {
+    text-align: justify;
+    font-size: 18px;
+    color: rgb(95, 113, 124);
+}

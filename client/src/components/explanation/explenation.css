@@ -15,6 +15,11 @@ h2 {
     color: #00979D;
 }
 
+h3 {
+    color: #00979D;
+    text-decoration: underline;
+}
+
 p {
     text-align: justify;
     color: rgb(79, 95, 116);
