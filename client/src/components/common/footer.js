@@ -5,7 +5,7 @@ function Footer (props) {
     return (
         <div className="appFooter">
             <div className="footerText">
-                Made by @gilmaimon 2019
+                Copyright © 2019 @gilmaimon
             </div>
         </div>
     );

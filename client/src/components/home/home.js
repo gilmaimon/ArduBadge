@@ -21,7 +21,7 @@ class InteractiveBadgeInput extends Component {
     }
 
     onLibnameChange(e) {
-        if(e.target.value.length == 0) return;
+        if(e.target.value.length === 0) return;
         this.setState({
             libname: e.target.value
         });
@@ -96,6 +96,11 @@ class Home extends Component {
                 </div>
                 <div className="rightContent">
                     <RecentlyStartedWatching />
+                    <div className="githubLogoWrapper">    
+                        <a className="githubLink" href="https://github.com/gilmaimon/Arduino-Library-Manager-Badge">
+                            <img className="githubLogo" alt="Github Logo" src="/github_logo.png" />
+                        </a>
+                    </div>
                 </div>
                 </div>
                 <Footer />
