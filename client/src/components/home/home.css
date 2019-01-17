@@ -52,5 +52,11 @@
 .markdownCode {
     text-align: justify;
     font-size: 18px;
-    color: rgb(95, 113, 124);
+    color: rgb(0, 87, 90);
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+.homeSpan {
+    font-weight: bold;
 }
