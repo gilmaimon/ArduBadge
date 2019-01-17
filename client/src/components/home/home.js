@@ -8,7 +8,7 @@ import Footer from '../common/footer'
 
 import RecentlyStartedWatching from './recently'
 
-const HTTP_DOMAIN_PREFIX = "http://www.ardu-badge.com/";
+const HTTP_DOMAIN_PREFIX = "http://www.ardu-badge.com";
 
 class InteractiveBadgeInput extends Component {
     constructor(props) {
@@ -45,7 +45,7 @@ class InteractiveBadgeInput extends Component {
                 </div>
                 <h4>Use This Markdown</h4>
                 <p className="markdownCode">
-                    ![![arduino-library-badge]({HTTP_DOMAIN_PREFIX}/badge/{this.state.libname}.svg)]({HTTP_DOMAIN_PREFIX}/{this.state.libname})
+                    [![arduino-library-badge]({HTTP_DOMAIN_PREFIX}/badge/{this.state.libname}.svg)]({HTTP_DOMAIN_PREFIX}/{this.state.libname})
                 </p>
             </div>
         );
