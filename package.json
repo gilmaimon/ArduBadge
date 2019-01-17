@@ -7,7 +7,7 @@
     "start": "node server/main.js",
     "prestart": "npm build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "debug": "nodemon server/main.js --ignore tmp/"
+    "debug": "nodemon server/main.js --ignore tmp/ --ignore client/"
   },
   "repository": {
     "type": "git",

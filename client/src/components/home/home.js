@@ -34,7 +34,7 @@ class InteractiveBadgeInput extends Component {
                     <span className="badgePrefix">{this.domainHttpPrefix}/badge/</span>
                     <AutosizeInput
                         style={{ fontSize: 18 }}
-                        className="badgeInput" 
+                        class="badgeInput" 
                         onChange={this.onLibnameChange} 
                         value={this.state.libname}/>
                     <span className="badgePostfix">.svg</span>
@@ -95,10 +95,6 @@ class Home extends Component {
                     </div>
                 </div>
                 <div className="rightContent">
-                    <p>
-                        This is nothing important this is just here to 
-                        take some room on the right side.
-                    </p>
                     <RecentlyStartedWatching />
                 </div>
                 </div>
