@@ -1,17 +1,42 @@
 import React, { Component } from 'react';
 import './recently.css'
 
-function Item(props) {
-    return (
-        <a className="linkLibWrapper" href={`/${props.library.name}`}>
-            <div className="libItemWrapper">
-                <div className="leftColoredTag" />
-                <span className="spanLibName">
-                    {props.library.name + ` ` + props.library.version}
-                </span>
-            </div>
-        </a>
+class Item extends Component {
+    constructor(props) {
+        super(props);
+
+        this.mouseHover = this.mouseHover.bind(this);
+        this.mouseLeave = this.mouseLeave.bind(this);
+
+        this.state = {
+            hovered: false
+        };
+    }
+
+    mouseHover(e) {
+        this.setState({hovered: true})
+    }
+
+    mouseLeave(e) {
+        this.setState({hovered: false})
+    }
+    
+    render() {
+        return (
+            <a 
+            className="linkLibWrapper" 
+            href={`/${this.props.library.name}`}
+            onMouseEnter={this.mouseHover}
+            onMouseLeave={this.mouseLeave}>
+                <div className="libItemWrapper">
+                    <div className={`leftColoredTag ${this.state.hovered? "longer": ""}`} />
+                    <span className="spanLibName">
+                        {this.props.library.name + ` ` + this.props.library.version}
+                    </span>
+                </div>
+            </a>
     );
+    }
 }
 
 function Header(props) {

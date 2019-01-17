@@ -2,7 +2,7 @@
     border-radius: 2px;
     border-width: 1px;
     border-style: solid;
-    border-color: black;
+    border-color: rgb(52, 84, 110);
     padding: 2px 2px;
     margin: 5px 0px;
 
@@ -15,7 +15,6 @@
 }
 
 .leftColoredTag {
-    background-color: red;
     width: 10px;
     margin: -2px;
     margin-right: 4px;
@@ -23,6 +22,10 @@
     border-top-left-radius: 2px;
 
     background-color: #00979D;
+}
+
+.longer {
+    width: 17px;
 }
 
 .spanLibName {

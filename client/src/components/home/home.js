@@ -21,6 +21,7 @@ class InteractiveBadgeInput extends Component {
     }
 
     onLibnameChange(e) {
+        if(e.target.value.length == 0) return;
         this.setState({
             libname: e.target.value
         });
