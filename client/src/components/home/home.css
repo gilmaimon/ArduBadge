@@ -11,6 +11,37 @@
     padding-left: 50px;
 }
 
+.interactiveWrapper {
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.badgePrefix {
+    font-size: 18px;
+}
+
+.badgeInput {
+    font-size: 18px;
+    border: none;
+    padding: 1px;
+    background: none;
+    border-radius: 5px;
+    color: #00979D;
+    margin-bottom: 13px;
+}
+
+.badgePostfix {
+    font-size: 18px;
+}
+
+.badgeImg {
+    margin-bottom: -5px;
+    margin-left: 7px;
+}
+
 @media (max-width:700px) {
     .homeWrapper {
         flex-direction: column-reverse;
@@ -26,37 +57,10 @@
     }
 }
 
-.interactiveWrapper {
-    border-radius: 5px;
-    background-color: #f0f0f0;
-    padding-left: 15px;
-}
-
-.badgePrefix {
-    font-size: 18px;
-}
-
-.badgeInput {
-    margin-top: 15px;
-    font-size: 18px;
-    border: none;
-    padding: 1px;
-    background: none;
-    border-radius: 5px;
-    color: #00979D;
-    margin-bottom: 13px;
-}
-
-.badgePostfix {
-    font-size: 18px;
-}
-
-.badgeImg {
-    border: none;
-    padding: none;
-    margin: none;
-    margin-left: 10px;
-    margin-top: 15px;
+@media (max-width:1000px) {
+    .badgeImg {
+        margin-left: 0px;
+    }
 }
 
 .badgeWrapper {
