@@ -8,12 +8,13 @@ import Footer from '../common/footer'
 
 import RecentlyStartedWatching from './recently'
 
+const HTTP_DOMAIN_PREFIX = "http://www.ardu-badge.com/";
+
 class InteractiveBadgeInput extends Component {
     constructor(props) {
         super(props);
 
         const defaultName = "MyLibrary";
-        this.domainHttpPrefix = "http://ardu-badge.xyz";
         this.onLibnameChange = this.onLibnameChange.bind(this);
         this.state = {
             libname: defaultName
@@ -31,7 +32,7 @@ class InteractiveBadgeInput extends Component {
         return (
             <div>
                 <div className="interactiveWrapper">
-                    <span className="badgePrefix">{this.domainHttpPrefix}/badge/</span>
+                    <span className="badgePrefix">{HTTP_DOMAIN_PREFIX}/badge/</span>
                     <AutosizeInput
                         style={{ fontSize: 18 }}
                         class="badgeInput" 
@@ -44,7 +45,7 @@ class InteractiveBadgeInput extends Component {
                 </div>
                 <h4>Use This Markdown</h4>
                 <p className="markdownCode">
-                    ![![arduino-library-badge]({this.domainHttpPrefix}/badge/{this.state.libname}.svg)]({this.domainHttpPrefix}/{this.state.libname})
+                    ![![arduino-library-badge]({HTTP_DOMAIN_PREFIX}/badge/{this.state.libname}.svg)]({HTTP_DOMAIN_PREFIX}/{this.state.libname})
                 </p>
             </div>
         );
