@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './header.css'
-import { BrowserRouter as NavLink, Link} from "react-router-dom";
+import { BrowserRouter as Link} from "react-router-dom";
 
 function Header (props) {
     return (
-        <div class="appHeader">
-            <Link to="/" class="appTitle">
-                <div>{props.title}</div>
+        <div className="appHeader">
+            <Link to="/" className="appTitle">
+                <span className="appTitle">{props.title}</span>
             </Link>
         </div>
     );

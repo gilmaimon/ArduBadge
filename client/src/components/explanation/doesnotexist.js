@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './doesnotexist.css'
-import { BrowserRouter as Link, NavLink } from "react-router-dom";
+import { BrowserRouter as NavLink } from "react-router-dom";
 
 function DoesNotExist (props) {
     return (
-        <div class="content">
+        <div className="content">
             <br/>
             <h2>Whoops.</h2>
             <p>
                 We could not find an Arduino Library 
-                called <span class="libname">{props.libName}</span> on the Arduino Library Manager.
+                called <span className="libname">{props.libName}</span> on the Arduino Library Manager.
             </p>
             <p>
                 There might be a typo in the library name or the library

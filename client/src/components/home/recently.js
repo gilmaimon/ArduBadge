@@ -9,7 +9,9 @@ class RecentlyStartedWatching extends Component {
     }
 
     componentDidMount() {
-
+        fetch("/stats/recent")
+            .then(response => response.json())
+            .then(data => console.log(data));
     }
 
     render() {

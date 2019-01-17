@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './footer.css'
 
 function Footer (props) {
     return (
-        <div class="appFooter">
-            <div class="footerText">
+        <div className="appFooter">
+            <div className="footerText">
                 Made by @gilmaimon 2019
             </div>
         </div>
