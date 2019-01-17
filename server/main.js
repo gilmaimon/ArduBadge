@@ -1,19 +1,17 @@
 let fs = require('fs');
 let path = require('path');
 
-let app = require('express')();
+let express = require('express');
+let app = express();
 let request = require('request');
 
 let config = require('./config');
-
 let db = require('./db')(config.mongodb_path, config.db_name);
+let badgeUrl = require('./utilities/badge');
+let libraries = require('./libraries');
 
 //services
 let libraries_reloader = require('./utilities/reload_libraries.js')
-
-
-let badgeUrl = require('./utilities/badge');
-let libraries = require('./libraries');
 let access_logger = require('./utilities/access_log');
 
 libraries_reloader.onInterval(1000 * config.libraries_refresh_interval_in_seconds, function(err) {
@@ -29,7 +27,7 @@ access_logger.cacheOnInterval(1000 * config.stats_refresh_interval_in_seconds);
 let arduinoLogoBase64 = function(filename){
     var bitmap = fs.readFileSync(filename);
     return new Buffer(bitmap).toString('base64');
-}(path.join(__dirname, '../res', 'arduino_logo_tiny.png'));
+}(path.join(__dirname, '/res', 'arduino_logo_tiny.png'));
 
 function getSvgFromUrl(url) {
     return new Promise(function(resolve, reject) {
@@ -39,6 +37,9 @@ function getSvgFromUrl(url) {
         });
     })
 }
+
+// for static react files
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 app.get('/badge/:libname.svg', async function(req, res) {
     let libname = req.params.libname;
@@ -98,6 +99,11 @@ app.get('/stats/recent', async function(req, res) {
     } catch(err) {
         res.json([]);
     }
-})
+});
+
+app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, '../client/build/index.html'))
+});
+
 
 app.listen(config.port, '0.0.0.0');

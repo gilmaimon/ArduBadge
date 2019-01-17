@@ -1,0 +1,78 @@
+.what-are-libs {
+    background-color: #ebebeb;
+    border-radius: 20px;
+    padding: 10px 40px;
+    margin: 0px -30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.mini {
+    font-size: 1rem;
+}
+
+.explanationImg {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.optionsContainer {
+    display: flex;
+}
+
+.option {
+    width: 50%;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    border-style: solid;
+    border-width: 2px;
+    color:  rgb(243, 255, 255);
+    text-decoration: none;
+}
+
+.option:nth-child(1){
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.option:nth-child(2){
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.active {
+    background-color: white;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.libname {
+    background: #ebebeb;
+    padding: 2px 1px;
+}
+
+.phrase {
+    font-weight: bold;
+    text-decoration: transparent;
+}
+
+
+@media (max-width:600px) {
+    .what-are-libs {
+        border-radius: 15px;
+        padding: 1px 30px;
+        margin: 0px -20px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .option {
+        font-size: 14px;
+    }
+}

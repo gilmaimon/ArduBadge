@@ -1,0 +1,35 @@
+.libItemWrapper {
+    border-radius: 2px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(52, 84, 110);
+    padding: 2px 2px;
+    margin: 5px 0px;
+
+    display: flex;
+    width: 100%;
+}
+
+.linkLibWrapper {
+    text-decoration: none;
+}
+
+.leftColoredTag {
+    width: 10px;
+    margin: -2px;
+    margin-right: 4px;
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+
+    background-color: var(--main-color);
+}
+
+.longer {
+    width: 17px;
+}
+
+.spanLibName {
+    color: black;
+    word-wrap:break-word;
+    table-layout: fixed;
+}
