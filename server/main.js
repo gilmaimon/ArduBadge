@@ -5,10 +5,13 @@ let express = require('express');
 let app = express();
 let request = require('request');
 
+
+
 let config = require('./config');
 let db = require('./db')(config.mongodb_path, config.db_name);
 let badgeUrl = require('./utilities/badge');
 let libraries = require('./libraries');
+let logs = require('./utilities/logs');
 
 //services
 let libraries_reloader = require('./utilities/reload_libraries.js')
@@ -40,6 +43,9 @@ function getSvgFromUrl(url) {
 
 // for static react files
 app.use(express.static(path.join(__dirname, '../client/build')));
+
+// log request for non static content
+logs.bindVerbose(app, 'access.log');
 
 app.get('/badge/:libname.svg', async function(req, res) {
     let libname = req.params.libname;
