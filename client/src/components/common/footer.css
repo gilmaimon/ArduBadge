@@ -7,8 +7,28 @@
 }
   
 .footerText {
-    padding-top: 40px;
+    padding-top: 25px;
     text-align: center;
+}
+
+.contactLink {
     color: white;
+    text-decoration: none;
     font-size: 1rem;
+}
+
+.contactLink:hover {
+    font-weight: bold;
+}
+
+.homeLink {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.homeLink:hover {
+    color: white;
+    text-decoration: underline;
+    font-size: 1.3rem;
 }
