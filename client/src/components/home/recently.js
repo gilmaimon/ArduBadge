@@ -47,24 +47,37 @@ function Header(props) {
     );
 }
 
+const RECENT_UPDATE_INTERVAL = 15 * 1000; //ms
+
 class RecentlyStartedWatching extends Component {
     constructor(props) {
         super(props);
 
         this.state = {libraries: []}
+        this.timerId = 0;
     }
 
-    componentDidMount() {
+    setupIntervalUpdates(interval) {
+        this.updateRecentList();
+        return setInterval(function() {
+            this.updateRecentList();
+        }.bind(this), interval);
+    }
+
+    updateRecentList() {
         fetch("/stats/recent")
             .then(response => response.json())
             .then(data => this.setState({libraries: data}));
+    }
 
-        setInterval(function() {
-            console.log("Fetching recent");
-            fetch("/stats/recent")
-            .then(response => response.json())
-            .then(data => this.setState({libraries: data}));
-        }.bind(this), 10 * 1000);
+    componentDidMount() {
+        // start interval updates
+        this.timerId = this.setupIntervalUpdates(RECENT_UPDATE_INTERVAL);
+    }
+
+    componentWillUnmount() {
+        // Stop the interval updates
+        clearInterval(this.timerId);
     }
 
     render() {
