@@ -45,7 +45,7 @@ function getSvgFromUrl(url) {
 app.use(express.static(path.join(__dirname, '../client/build')));
 
 // log request for non static content
-logs.bindVerbose(app, 'access.log');
+logs.bindVerbose(app, 'logs/access.log');
 
 app.get('/badge/:libname.svg', async function(req, res) {
     let libname = req.params.libname;
