@@ -36,6 +36,16 @@ p {
   line-height: 2rem;
 }
 
+.aLink {
+  color: var(--main-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.aLink:hover {
+  text-decoration: underline;
+}
+
 @media only screen and (min-width: 1500px) {
   .main {
       padding: 0px 25%;

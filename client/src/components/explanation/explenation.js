@@ -102,8 +102,8 @@ function Explanation (props) {
                 <img alt="markdown library badge" className="badge" src={`/badge/${library.name}.svg`} />
                 <h2>What is {libName}?</h2>
                 <p>{library.sentence} {library.paragraph} </p>
-                <p>Made by: <a href={library.repository}>{library.author}</a> </p>
-                <p><a href={library.website}>Visit the official website.</a></p>
+                <p>Made by: <a className="aLink" href={library.repository}>{library.author}</a> </p>
+                <p><a className="aLink" href={library.website}>Visit the official website.</a></p>
                 <div>
             </div>
             <br/>
@@ -114,7 +114,8 @@ function Explanation (props) {
             </Switch>
             <div className="content">
                 <p className="mini">
-                    Credit: This text is heavly based on the <a href="https://www.arduino.cc/en/guide/libraries">official arduino guide</a>.
+                    Credit: This text is heavly based on the <a className="aLink" href="https://www.arduino.cc/en/guide/libraries">official arduino guide</a>.
+                    This text is licensed under a <a className="aLink" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License. </a>
                 </p>
             </div>
         </div>

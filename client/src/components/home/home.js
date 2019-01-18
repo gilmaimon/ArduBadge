@@ -78,7 +78,7 @@ class Home extends Component {
                         via the built in <span className="homeSpan">Library Manager</span>. In one click they can view 
                         instruction to help them trough the installtion proccess.
                     </p>
-                    <a href="/MySensors/ide">
+                    <a className="aLink" href="/MySensors/ide">
                         <h3>Click Here to see an example!</h3>
                     </a>
                     <br/>
