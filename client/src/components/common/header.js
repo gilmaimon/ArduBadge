@@ -1,25 +1,24 @@
 import React from 'react';
 import './header.css'
-import { Link } from "react-router-dom";
 
 function Header (props) {
     if(props.secondary) {
         return (
             <div className="appHeader">
-                <Link to="/" className="titleSubtitleContainer">
+                <a href="/" className="titleSubtitleContainer">
                     <span className="appTitle">{props.primary}</span>
                     <div className="subtitleWrapper">
                         <span className="appSubtitle">{props.secondary}</span>
                     </div>
-                </Link>
+                </a>
             </div>
         );
     } else {
         return (
             <div className="appHeader">
-                <Link to="/" className="singleTitleSubtitleContainer">
+                <a href="/" className="singleTitleSubtitleContainer">
                     <span className="appTitle">{props.primary}</span>
-                </Link>
+                </a>
             </div>
         );
     }
