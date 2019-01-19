@@ -130,8 +130,8 @@ httpsServer.listen(config.https_port || 443, () => {
 });
 
 // Starting http server that redirects over to https
-var httpServer = express.createServer();
-httpServer.get('*', function(req, res) {  
+var httpApp = express();
+httpApp.get('*', function(req, res) {  
     res.redirect('https://' + req.headers.host + req.url);
 })
-httpServer.listen(config.http_port);
+httpApp.listen(config.http_port);
