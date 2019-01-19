@@ -43,9 +43,14 @@
 }
 
 .githubLogoWrapper {
-    display: inline-block;
     width: 100%;
     margin-bottom: 20px;
+}
+
+.starBtnWrapper {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
 }
 
 .githubLink {

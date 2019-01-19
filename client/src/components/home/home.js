@@ -26,7 +26,7 @@ class InteractiveBadgeInput extends Component {
     onLibnameChange(e) {
         let newValue = e.target.value;
         if(newValue.length === 0) return;
-        if(newValue.includes('/') || newValue.includes('\\')) {
+        if(newValue.includes('/') || newValue.includes('\\') || newValue.includes('?')) {
             return;
         }
         
@@ -58,8 +58,8 @@ class InteractiveBadgeInput extends Component {
                         onChange={this.onLibnameChange} 
                         value={this.state.libname}/>
                     <span className="badgePostfix">.svg</span>
-                    <a className="badgeWrapper" href={`/${this.state.libname}/ide`}>
-                        <img alt="markdown badge" className="badgeImg" src={`/badge/${this.state.libname}.svg`}/>
+                    <a className="badgeWrapper" href={`/${urlencode(this.state.libname)}/ide`}>
+                        <img alt="markdown badge" className="badgeImg" src={`/badge/${urlencode(this.state.libname)}.svg`}/>
                     </a>
                 </div>
                 <h4>Use This Markdown</h4>
@@ -117,11 +117,21 @@ class Home extends Component {
                 <div className="rightContent">
                     <RecentlyStartedWatching />
                     <br/>
-                    <h3> View on Github </h3>
+                    <h3> Star on Github </h3>
                     <div className="githubLogoWrapper">    
-                        <a className="githubLink" href="https://github.com/gilmaimon/Arduino-Library-Manager-Badge">
+                        <a className="githubLink" href="https://github.com/gilmaimon/ArduBadge">
                             <img className="githubLogo" alt="Github Logo" src="/github_logo.png" />
                         </a>
+                        <div className="starBtnWrapper">
+                            <a className="github-button" 
+                                href="https://github.com/gilmaimon/ArduBadge" 
+                                data-icon="octicon-star" 
+                                data-size="large" 
+                                data-show-count="true" 
+                                aria-label="Star gilmaimon/ArduBadge on GitHub">
+                                Star
+                            </a>
+                        </div>
                     </div>
                 </div>
                 </div>
