@@ -19,8 +19,6 @@ let express = require('express');
 let app = express();
 let request = require('request');
 
-
-
 let config = require('./config');
 let db = require('./db')(config.mongodb_path, config.db_name);
 let badgeUrl = require('./utilities/badge');
@@ -125,14 +123,15 @@ app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname, '../client/build/index.html'))
 });
 
-// Starting both http & https servers
-const httpServer = http.createServer(app);
+// Starting https server
 const httpsServer = https.createServer(credentials, app);
-
-httpServer.listen(config.http_port || 80, () => {
-	console.log('HTTP Server running on port 80');
-});
-
 httpsServer.listen(config.https_port || 443, () => {
 	console.log('HTTPS Server running on port 443');
 });
+
+// Starting http server that redirects over to https
+var httpServer = express.createServer();
+httpServer.get('*', function(req, res) {  
+    res.redirect('https://' + req.headers.host + req.url);
+})
+httpServer.listen(config.http_port);
