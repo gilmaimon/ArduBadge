@@ -22,7 +22,12 @@ class InteractiveBadgeInput extends Component {
     }
 
     onLibnameChange(e) {
-        if(e.target.value.length === 0) return;
+        let newValue = e.target.value;
+        if(newValue.length === 0) return;
+        if(newValue.includes('/') || newValue.includes('\\')) {
+            return;
+        }
+        
         this.setState({
             libname: e.target.value
         });

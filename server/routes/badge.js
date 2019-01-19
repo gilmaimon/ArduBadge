@@ -17,7 +17,7 @@ function getSvgBadge(libname, library) {
     return badgen({
         subject: 'Library Manager',
         status: status,
-        color: library? '46c018' :'969696',
+        color: library? 'green' :'grey',
         icon: `data:image/png;base64,${arduinoLogoBase64}`,
         iconWidth: 17
     })
