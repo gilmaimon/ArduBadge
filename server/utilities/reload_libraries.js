@@ -6,16 +6,6 @@ let rimraf = require("rimraf");
 
 let LibraryModel = require('../models/library');
 
-
-function clearCollection(model) {
-    return new Promise(function(resolve, reject) {
-        // remove every item from the given model
-        model.deleteMany({}).exec().then(function(res) {
-            resolve(null);
-        });
-    });
-}
-
 function downloadGzFile(folder, filename) {
     return new Promise(function(resolve, reject) {
         // download libraries gz file to the specified folder
@@ -104,8 +94,12 @@ module.exports = {
     onInterval: function(interval, callback) {
         setInterval(function() {
             reloadArduinoLibraries()
-                .then((res) => callback(false))
-                .catch((err) => callback(true));
+                .then(function(result) {
+                    if(callback) callback(false); //false == no error
+                })
+                .catch(function(err) {
+                    if(callback) callback(true); //error = true
+                })
         }, interval);
     }
 }
