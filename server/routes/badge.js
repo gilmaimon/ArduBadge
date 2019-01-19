@@ -1,20 +1,25 @@
 let fs = require('fs');
 let path = require('path');
-let request = require('request');
 
-let badgeUrl = require('../utilities/badge');
+let badgen = require('badgen');
 
 let arduinoLogoBase64 = function(filename){
     var bitmap = fs.readFileSync(filename);
     return new Buffer(bitmap).toString('base64');
 }(path.join(__dirname, '../res', 'arduino_logo_tiny.png'));
 
-function getSvgFromUrl(url) {
-    return new Promise(function(resolve, reject) {
-        request.get(resPath, function(err, response, body) {
-            if (err) reject(err);
-            else resolve(body);
-        });
+function getSvgBadge(libname, library) {
+    let status = libname;
+    if(library) {
+        status += ` ${library.version}`
+    }
+    
+    return badgen({
+        subject: 'Library Manager',
+        status: status,
+        color: library? '46c018' :'969696',
+        icon: `data:image/png;base64,${arduinoLogoBase64}`,
+        iconWidth: 17
     })
 }
 
@@ -30,13 +35,8 @@ module.exports = {
             if(library) {
                 access_logger.logEntry(req, "ACTION_GET_BADGE");
             }
-        
-            // create appropriate badge url
-            resPath = badgeUrl(arduinoLogoBase64, libname, library);
-            
-            // serve that badge (svg file) to the user
-            let svg = await getSvgFromUrl(resPath);
-            
+                                
+            let svg = await getSvgBadge(libname, library);
             res.setHeader('Content-Type', 'image/svg+xml');
             res.end(svg);
         });
