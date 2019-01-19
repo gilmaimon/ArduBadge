@@ -1,6 +1,20 @@
 let fs = require('fs');
 let path = require('path');
 
+const http = require('http');
+const https = require('https');
+
+// Certificate
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/www.ardu-badge.com/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/www.ardu-badge.com/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/www.ardu-badge.com/chain.pem', 'utf8');
+
+const credentials = {
+	key: privateKey,
+	cert: certificate,
+	ca: ca
+};
+
 let express = require('express');
 let app = express();
 let request = require('request');
@@ -111,5 +125,14 @@ app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname, '../client/build/index.html'))
 });
 
+// Starting both http & https servers
+const httpServer = http.createServer(app);
+const httpsServer = https.createServer(credentials, app);
 
-app.listen(config.port, '0.0.0.0');
+httpServer.listen(config.http_port || 80, () => {
+	console.log('HTTP Server running on port 80');
+});
+
+httpsServer.listen(config.https_port || 443, () => {
+	console.log('HTTPS Server running on port 443');
+});
