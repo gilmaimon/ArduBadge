@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AutosizeInput from 'react-input-autosize';
+import urlencode from 'urlencode'
 
 import './home.css'
 
@@ -16,6 +17,7 @@ class InteractiveBadgeInput extends Component {
 
         const defaultName = "MyLibrary";
         this.onLibnameChange = this.onLibnameChange.bind(this);
+        this.getBadgeMarkdown = this.getBadgeMarkdown.bind(this);
         this.state = {
             libname: defaultName
         }
@@ -31,6 +33,18 @@ class InteractiveBadgeInput extends Component {
         this.setState({
             libname: e.target.value
         });
+    }
+
+    urlEncodeSpaces
+
+    getBadgeMarkdown() {
+        let encodedLibname = urlencode(this.state.libname);
+        
+        let encodedSvgLink = `${HTTP_DOMAIN_PREFIX}/badge/${encodedLibname}.svg`;
+        let encodedExplanationLink = `${HTTP_DOMAIN_PREFIX}/${encodedLibname}`
+
+        let markdown = `[![arduino-library-badge](${encodedSvgLink})](${encodedExplanationLink})`
+        return markdown;
     }
 
     render() {
@@ -50,7 +64,7 @@ class InteractiveBadgeInput extends Component {
                 </div>
                 <h4>Use This Markdown</h4>
                 <p className="markdownCode">
-                    [![arduino-library-badge]({HTTP_DOMAIN_PREFIX}/badge/{this.state.libname}.svg)]({HTTP_DOMAIN_PREFIX}/{this.state.libname})
+                    {this.getBadgeMarkdown()}
                 </p>
             </div>
         );
