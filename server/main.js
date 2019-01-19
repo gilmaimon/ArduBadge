@@ -25,7 +25,7 @@ require('./routes/default_index').use(app); // For React
 if(config.https_configuration.active) {
     // Starting https server
     const ssl = require('./ssl');
-    const httpsServer = https.createServer(ssl.credentials, app);
+    const httpsServer = https.createServer(ssl.getCredentials(config), app);
     httpsServer.listen(config.https_port || 443, () => {
         console.log('HTTPS Server running on port 443');
     });
