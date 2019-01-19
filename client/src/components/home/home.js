@@ -8,7 +8,7 @@ import Footer from '../common/footer'
 
 import RecentlyStartedWatching from './recently'
 
-const HTTP_DOMAIN_PREFIX = "http://www.ardu-badge.com";
+const HTTP_DOMAIN_PREFIX = "https://www.ardu-badge.com";
 
 class InteractiveBadgeInput extends Component {
     constructor(props) {
