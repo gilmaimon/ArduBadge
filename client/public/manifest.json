@@ -1,15 +1,18 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "ArduBadge",
+  "name": "ArduBadge - GitHub Badge For Arduino Libraries",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "favicon.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#00979D",
+  "background_color": "#fcffff",
+  "description": "ArduBadge is a way to help new and experienced Arduino users to get a quick overview and installation guide for community-contributed Arduino libraries.",
+  "lang": "en-US",
+  ​​"orientation": "portrait-primary"
 }
