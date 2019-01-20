@@ -1,5 +1,6 @@
 const https = require('https');
 let express = require('express');
+let compression = require('compression')
 
 let config = require('./config');
 let db = require('./db')(config.mongodb_path, config.db_name);
@@ -14,6 +15,7 @@ access_logger.cacheOnInterval(1000 * config.stats_refresh_interval_in_seconds);
 
 let app = express();
 /*** Routes ***/
+app.use(compression());
 require('./routes/static').use(app); // Static Content
 require('./utilities/logs').bindVerbose(app, 'logs/access.log'); // Logs
 require('./routes/badge').use(app, libraries, access_logger); // Badge

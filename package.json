@@ -21,6 +21,7 @@
   "homepage": "https://github.com/gilmaimon/Arduino-Library-Manager-Badge#readme",
   "dependencies": {
     "badgen": "^2.6.0",
+    "compression": "^1.7.3",
     "download-file": "^0.1.5",
     "express": "^4.16.4",
     "express-winston": "^3.0.1",
