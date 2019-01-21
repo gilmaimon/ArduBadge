@@ -12,7 +12,7 @@ function getSvgBadge(libname, version, library) {
     let status = libname;
     if(version) {
         status += ` ${version}`
-    } else if(library.version) {
+    } else if(library) {
         status += ` ${library.version}`
     }
     
