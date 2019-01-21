@@ -1,6 +1,7 @@
 import React from 'react';
 import './explenation.css'
 import { Route, Link, Switch } from "react-router-dom";
+import urlencode from 'urlencode';
 
 function IdePhrase(props) {
     return <span className="phrase">{props.body}</span>;
@@ -12,15 +13,20 @@ function ActionPhrase(props) {
 
 function LibraryManagerExplanation(props) {
     let library = props.library;
-    let latestVersion = library.version;
+    let version = library.version;
     let libName = <span className="libname">{library.name}</span>
+
+    let pathPrefix = `/${library.name}/`
+    if(props.versioned) {
+        pathPrefix += library.version;
+    }
     return (
         <div>
             <div>
                 <h2>How to Install {libName}</h2>
                 <div className="optionsContainer">
-                    <Link to={`/${library.name}/ide`} className="option active">Using the Library Manager</Link>
-                    <Link to={`/${library.name}/zip`} className="option">From a ZIP File</Link>
+                    <Link to={pathPrefix + '/ide'} className="option active">Using the Library Manager</Link>
+                    <Link to={pathPrefix + '/zip'} className="option">From a ZIP File</Link>
                 </div>
             </div>
             <div className="how-to-install">
@@ -35,8 +41,8 @@ function LibraryManagerExplanation(props) {
                     install {libName}, search for "{libName}", 
                     scroll the list to find it and <ActionPhrase body="click on it"/>.</p>
                 
-                <img alt="shows how to get the library latest version and install" className="explanationImg" src="/libs_manager.png"/>
-                <p>You should see the latest version of {libName} (version <IdePhrase body={latestVersion}/>) listed.</p>
+                <img alt="shows how to get the library target version and install" className="explanationImg" src="/libs_manager.png"/>
+                <p>You should see the target version of {libName} (version <IdePhrase body={version}/>) listed.</p>
                 <p>Finally click on <ActionPhrase body="install"/> and wait for the IDE to install {libName}. 
                     Downloading may take time depending on your connection speed. Once it 
                     has finished, an Installed tag should appear next to the {libName} library. 
@@ -51,18 +57,23 @@ function LibraryManagerExplanation(props) {
 function ZipExplanation(props) {
     let library = props.library;
     let libName = <span className="libname">{library.name}</span>
+    let pathPrefix = `/${library.name}/`
+    if(props.versioned) {
+        pathPrefix += library.version;
+    }
+
     return (
         <div>
             <div>
                 <h2>How to Install {libName}</h2>
                 <div className="optionsContainer">
-                    <Link to={`/${library.name}/ide`} className="option">Using the Library Manager</Link>
-                    <Link to={`/${library.name}/zip`} className="option active">From a ZIP File</Link>
+                    <Link to={pathPrefix + '/ide'} className="option">Using the Library Manager</Link>
+                    <Link to={pathPrefix + '/zip'} className="option active">From a ZIP File</Link>
                 </div>
             </div>
             <div className="how-to-install">
                 <p>{libName} can also be installed as a <IdePhrase body="ZIP" /> file. 
-                The latest version's (<IdePhrase body={library.version}/>) ZIP 
+                The target version's (<IdePhrase body={library.version}/>) ZIP 
                 file is available for <a href={library.url}><ActionPhrase body="Download Here"/></a>.
                 </p>
                 <p>Inside the zip will 
@@ -87,6 +98,11 @@ function Explanation (props) {
     let library = props.library;
     let libName = <span className="libname">{library.name}</span>
 
+    let badgeUrl = `/badge/${library.name}.svg`
+    if(props.version) {
+        badgeUrl += `?version=${urlencode(props.version)}`
+    }
+
     return (
         <div className="main">
             <div className="what-are-libs">
@@ -99,7 +115,7 @@ function Explanation (props) {
                     additional libraries, you will need to install them.</p>
             </div>
             <div>
-                <img alt="markdown library badge" className="badge" src={`/badge/${library.name}.svg`} />
+                <img alt="markdown library badge" className="badge" src={badgeUrl} />
                 <h2>What is {libName}?</h2>
                 <p>{library.sentence} {library.paragraph} </p>
                 <p>Made by: <a className="aLink" href={library.repository}>{library.author}</a> </p>
@@ -110,7 +126,11 @@ function Explanation (props) {
             </div>
             <Switch>
                 <Route exact path="/:libname/zip" component={() => <ZipExplanation library={library}/>}  />
-                <Route path="/:libname" component={() => <LibraryManagerExplanation library={library}/>} />
+                <Route exact path="/:libname/ide" component={() => <LibraryManagerExplanation library={library}/>} />
+                <Route exact path="/:libname/:version/zip" component={() => <ZipExplanation library={library} versioned={true}/>}  />
+                <Route exact path="/:libname/:version/ide" component={() => <LibraryManagerExplanation library={library}  versioned={true}/>} />
+                <Route exact path="/:libname/:version" component={() => <LibraryManagerExplanation library={library}  versioned={true}/>} />
+                <Route exact path="/:libname/" component={() => <LibraryManagerExplanation library={library}/>} />
             </Switch>
             <div className="content">
                 <p className="mini">

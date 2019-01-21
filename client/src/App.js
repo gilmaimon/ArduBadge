@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import urlencode from 'urlencode'
 
 import Header from './components/common/header'
 import Footer from './components/common/footer'
@@ -38,6 +39,11 @@ class App extends Component {
         return (
             <Router>
                 <Switch>
+                    <Route path="/:libname/:version/zip" component={libPage} />
+                    <Route path="/:libname/:version/ide" component={libPage} />
+                    <Route path="/:libname/ide" component={libPage} />
+                    <Route path="/:libname/zip" component={libPage} />
+                    <Route path="/:libname/:version" component={libPage} />
                     <Route path="/:libname" component={libPage} />
                     <Route path="/" component={Home} />
                 </Switch>
@@ -47,47 +53,51 @@ class App extends Component {
 }
 
 function libPage({match}) {
-    return <LibPage name={match.params.libname}/>;
+    return <LibPage libname={match.params.libname} version={match.params.version}/>;
 }
 
 class LibPage extends Component {
     constructor(props) {
         super(props);
-    
-        this.state = {
-            libname: props.name 
-        };
+
+        this.state = {}
     }
 
     componentDidMount() {
-        fetch(`/library/${this.state.libname}`)
+        let apiUrl = `/library/${this.props.libname}`;
+        if(this.props.version) {
+            apiUrl += `?version=${urlencode(this.props.version)}`
+        }
+        fetch(apiUrl)
             .then(response => response.json())
             .then(json => this.setState(json) );
     }
 
     render() {
         let libraryExists = this.state.found;
-        if(libraryExists === true) {
+        let primaryTitle = "ArduBadge";
+
+        if(libraryExists === true) { // Show explenation
             return (
                 <div>
-                    <Header primary="ArduBadge" secondary={this.state.data.name} />
-                    <Explanation library={this.state.data}/>
+                    <Header primary={primaryTitle} secondary={this.state.data.name} />
+                    <Explanation library={this.state.data} version={this.props.version}/>
                     <Footer />
                 </div>
             );
-        } else if(libraryExists === false) {
+        } else if(libraryExists === false) { // Does Not Exist
             return (
                 <div>
-                    <Header primary="ArduBadge"/>
-                    <DoesNotExist libName={this.state.libname}/>
+                    <Header primary={primaryTitle}/>
+                    <DoesNotExist libName={this.props.libname} version={this.props.version}/>
                     <Footer />
                 </div>
             );
-        } else {
+        } else { //Loading Page
             return (
                 <div>
-                    <Header primary="ArduBadge"/>
-                    <Pending libName={this.state.libname}/>
+                    <Header primary={primaryTitle}/>
+                    <Pending libName={this.props.libname}/>
                     <Footer />
                 </div>
             );

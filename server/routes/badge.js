@@ -8,9 +8,11 @@ let arduinoLogoBase64 = function(filename){
     return new Buffer(bitmap).toString('base64');
 }(path.join(__dirname, '../res', 'arduino_logo_tiny.png'));
 
-function getSvgBadge(libname, library) {
+function getSvgBadge(libname, version, library) {
     let status = libname;
-    if(library) {
+    if(version) {
+        status += ` ${version}`
+    } else if(library) {
         status += ` ${library.version}`
     }
     
@@ -27,16 +29,23 @@ module.exports = {
     use : function(app, libraries, access_logger) {
         app.get('/badge/:libname.svg', async function(req, res) {
             let libname = req.params.libname;
+            let version = req.query.version;
             
-            // fetch a library with that name
-            let library = await libraries.getMostRecent(libname);
+            let library;
+            if(version) {
+                // fetch a library with that name and the specified version
+                library = await libraries.getVersion(libname, version);
+            } else {
+                // fetch a library with that name
+                library = await libraries.getMostRecent(libname);
+            }
             
             // log entry if it was for an existing library
             if(library) {
                 access_logger.logEntry(req, "ACTION_GET_BADGE");
             }
                                 
-            let svg = await getSvgBadge(libname, library);
+            let svg = await getSvgBadge(libname, version, library);
             res.setHeader('Content-Type', 'image/svg+xml');
             res.end(svg);
         });
