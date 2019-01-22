@@ -6,7 +6,7 @@ let badgen = require('badgen');
 let arduinoLogoBase64 = function(filename){
     var bitmap = fs.readFileSync(filename);
     return new Buffer(bitmap).toString('base64');
-}(path.join(__dirname, '../res', 'arduino_logo_tiny.png'));
+}(path.join(__dirname, '../../res', 'arduino_logo_tiny.png'));
 
 function getSvgBadge(libname, version, library) {
     let status = libname;

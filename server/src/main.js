@@ -22,10 +22,10 @@ app.use(compression());
 const oneYear = 1 * 365 * 24 * 60 * 60 * 1000;
 app.use(express.static(path.join(__dirname, '../../client/build'), { maxAge: oneYear }));
 
-require('./utilities/logs').bindVerbose(app, 'logs/access.log'); // Logs
-require('./routes/badge').use(app, libraries, access_logger); // Badge
+require('./logs/log_route').bindVerbose(app, 'logs/access.log'); // Logs
+require('./badges/badge_route').use(app, libraries, access_logger); // Badge
 libraries.use(app, libraries, access_logger); // Lib Details
-require('./routes/recent').use(app, access_logger); // Recently Watched
+require('./stats/recent_route').use(app, access_logger); // Recently Watched
 
 // For React
 app.get('*', function(req, res) {
