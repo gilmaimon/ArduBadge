@@ -4,7 +4,7 @@ let download_file = require('download-file')
 let gunzip = require('gunzip-file')
 let rimraf = require("rimraf");
 
-let LibraryModel = require('../models/library');
+let LibraryModel = require('./library_model');
 
 function downloadGzFile(folder, filename) {
     return new Promise(function(resolve, reject) {

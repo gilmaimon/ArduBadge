@@ -1,28 +1,36 @@
 const https = require('https');
 let express = require('express');
 let compression = require('compression')
+let path = require('path');
 
 let config = require('./config');
 let db = require('./db')(config.mongodb_path, config.db_name);
-let libraries = require('./libraries');
+let libraries = require('./libraries/library');
 
 //libraries reloader service
-require('./utilities/reload_libraries.js').onInterval(1000 * config.libraries_refresh_interval_in_seconds);
+libraries.onInterval(1000 * config.libraries_refresh_interval_in_seconds);
 
 // libraries access logger service
-let access_logger = require('./utilities/access_log');
+let access_logger = require('./stats/access_log');
 access_logger.cacheOnInterval(1000 * config.stats_refresh_interval_in_seconds);
 
 let app = express();
 /*** Routes ***/
 app.use(compression());
-require('./routes/static').use(app); // Static Content
+
+// Static Content
+const oneYear = 1 * 365 * 24 * 60 * 60 * 1000;
+app.use(express.static(path.join(__dirname, '../../client/build'), { maxAge: oneYear }));
+
 require('./utilities/logs').bindVerbose(app, 'logs/access.log'); // Logs
 require('./routes/badge').use(app, libraries, access_logger); // Badge
-require('./routes/library').use(app, libraries, access_logger); // Lib Details
+libraries.use(app, libraries, access_logger); // Lib Details
 require('./routes/recent').use(app, access_logger); // Recently Watched
-require('./routes/default_index').use(app); // For React
 
+// For React
+app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, '../../client/build/index.html'))
+});
 
 if(config.https_configuration.active) {
     // Starting https server

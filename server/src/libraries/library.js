@@ -1,4 +1,6 @@
-let LibraryModel = require('./models/library');
+let LibraryModel = require('./library_model');
+let librariesReloader = require('./libraries_reloader')
+let librariesRoute = require('./library_route')
 
 module.exports = {
     getMostRecent : function(libName) {
@@ -20,5 +22,7 @@ module.exports = {
                 })
                 .catch(reject);
         })
-    }
+    },
+    onInterval: librariesReloader.onInterval,
+    use: librariesRoute.use
 }
