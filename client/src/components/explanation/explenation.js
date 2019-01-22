@@ -16,10 +16,11 @@ function LibraryManagerExplanation(props) {
     let version = library.version;
     let libName = <span className="libname">{library.name}</span>
 
-    let pathPrefix = `/${library.name}/`
+    let pathPrefix = `/${library.name}`
     if(props.versioned) {
-        pathPrefix += library.version;
+        pathPrefix += '/' + library.version;
     }
+
     return (
         <div>
             <div>
@@ -51,15 +52,15 @@ function LibraryManagerExplanation(props) {
             </div>
         </div>
       );
-
 }
 
 function ZipExplanation(props) {
     let library = props.library;
     let libName = <span className="libname">{library.name}</span>
-    let pathPrefix = `/${library.name}/`
+    
+    let pathPrefix = `/${library.name}`
     if(props.versioned) {
-        pathPrefix += library.version;
+        pathPrefix += '/' + library.version;
     }
 
     return (
