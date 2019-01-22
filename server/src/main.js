@@ -34,15 +34,15 @@ app.get('*', function(req, res) {
 
 if(config.https_configuration.active) {
     // Starting https server
-    const ssl = require('./ssl');
-    const httpsServer = https.createServer(ssl.getCredentials(config), app);
+    const credentials = require('./ssl/credentials');
+    const httpsServer = https.createServer(credentials.getCredentials(config), app);
     httpsServer.listen(config.https_port || 443, () => {
         console.log('HTTPS Server running on port 443');
     });
 
     if(config.https_configuration.redirect_http) {
         // Starting http server that redirects everything to https
-        require('./utilities/http_redirect_https_server').listen(config.http_port || 80);
+        require('./ssl/http_redirect_https_server').listen(config.http_port || 80);
     }
 } else {
     app.listen(config.http_port || 80);
