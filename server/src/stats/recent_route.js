@@ -3,9 +3,12 @@ module.exports = {
         // get recently added
         app.get('/stats/recent', async function(req, res) {
             //return the last libraries to be acccessed for the first time
-            access_logger.recentNewLibnames(10)
-                .then((recentlyWatched) => res.json(recentlyWatched))
-                .catch((err) => res.json([]));
+            let recentlyWatched = await access_logger.recentNewLibnames(10);
+            try {
+                res.json(recentlyWatched)
+            } catch(err) {
+                res.json([])
+            }
         });
     }
 }
