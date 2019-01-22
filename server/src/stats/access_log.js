@@ -1,4 +1,4 @@
-let AccessEntryModel = require('../models/access_entry');
+let AccessEntryModel = require('./access_entry_model');
 
 let recentlyStartedWatching = []
 
