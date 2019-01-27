@@ -23,6 +23,15 @@ module.exports = {
                 .catch(reject);
         })
     },
+    getAllNames: function() {
+        return new Promise(function(resolve, reject) {
+            LibraryModel.distinct('name')
+                .then(function(docs) {
+                    resolve(docs);
+                })
+                .catch((err) => resolve([]))
+        });
+    },
     onInterval: librariesReloader.onInterval,
     use: librariesRoute.use
 }
