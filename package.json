@@ -29,6 +29,7 @@
     "mongoose": "^5.2.8",
     "request": "^2.88.0",
     "rimraf": "^2.6.3",
+    "sitemap": "^2.1.0",
     "winston": "^3.1.0"
   }
 }

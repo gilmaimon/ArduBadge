@@ -18,6 +18,7 @@ let app = express();
 /*** Routes ***/
 app.use(compression());
 
+require('./sitemap/sitemap').use(app, libraries);
 // Static Content
 const oneYear = 1 * 365 * 24 * 60 * 60 * 1000;
 app.use(express.static(path.join(__dirname, '../../client/build'), { maxAge: oneYear }));
