@@ -47,6 +47,7 @@ module.exports = {
                                 
             let svg = await getSvgBadge(libname, version, library);
             res.setHeader('Content-Type', 'image/svg+xml');
+            res.setHeader('Cache-Control', 'no-cache');
             res.end(svg);
         });
     }
