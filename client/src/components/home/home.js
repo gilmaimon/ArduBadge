@@ -43,7 +43,7 @@ class InteractiveBadgeInput extends Component {
         let encodedSvgLink = `${HTTP_DOMAIN_PREFIX}/badge/${encodedLibname}.svg`;
         let encodedExplanationLink = `${HTTP_DOMAIN_PREFIX}/${encodedLibname}`
 
-        let markdown = `[![arduino-library-badge](${encodedSvgLink})](${encodedExplanationLink})`
+        let markdown = `[![arduino-library-badge](${encodedSvgLink}?)](${encodedExplanationLink})`
         return markdown;
     }
 
