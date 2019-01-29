@@ -13,16 +13,16 @@ To get started visit [www.ardu-badge.com](http://www.ardu-badge.com)
 ### Examples
 Exisitng Libraries:  
 
-[![arduino-library-badge](http://www.ardu-badge.com/badge/ArduinoCloudStorage.svg)](http://www.ardu-badge.com/ArduinoCloudStorage)
-[![arduino-library-badge](http://www.ardu-badge.com/badge/ArduinoComponents.svg)](http://www.ardu-badge.com/ArduinoComponents)
-[![arduino-library-badge](http://www.ardu-badge.com/badge/FastLED.svg)](http://www.ardu-badge.com/FastLED)
-[![arduino-library-badge](http://www.ardu-badge.com/badge/HttpClient.svg)](http://www.ardu-badge.com/HttpClient)
-[![arduino-library-badge](http://www.ardu-badge.com/badge/MQTT.svg)](http://www.ardu-badge.com/MQTT)
-[![arduino-library-badge](http://www.ardu-badge.com/badge/MySensors.svg)](http://www.ardu-badge.com/MySensors)
+[![arduino-library-badge](http://www.ardu-badge.com/badge/ArduinoCloudStorage.svg?)](http://www.ardu-badge.com/ArduinoCloudStorage)
+[![arduino-library-badge](http://www.ardu-badge.com/badge/ArduinoComponents.svg?)](http://www.ardu-badge.com/ArduinoComponents)
+[![arduino-library-badge](http://www.ardu-badge.com/badge/FastLED.svg?)](http://www.ardu-badge.com/FastLED)
+[![arduino-library-badge](http://www.ardu-badge.com/badge/HttpClient.svg?)](http://www.ardu-badge.com/HttpClient)
+[![arduino-library-badge](http://www.ardu-badge.com/badge/MQTT.svg?)](http://www.ardu-badge.com/MQTT)
+[![arduino-library-badge](http://www.ardu-badge.com/badge/MySensors.svg?)](http://www.ardu-badge.com/MySensors)
 
 Non-Existing Libraries:  
-[![arduino-library-badge](http://www.ardu-badge.com/badge/NoWay.svg)](http://www.ardu-badge.com/NoWay)
-[![arduino-library-badge](http://www.ardu-badge.com/badge/Not%20A%20Real%20Library.svg)](http://www.ardu-badge.com/Not%20A%20Real%20Library)
+[![arduino-library-badge](http://www.ardu-badge.com/badge/NoWay.svg?)](http://www.ardu-badge.com/NoWay)
+[![arduino-library-badge](http://www.ardu-badge.com/badge/Not%20A%20Real%20Library.svg?)](http://www.ardu-badge.com/Not%20A%20Real%20Library)
 
 
 
