@@ -30,7 +30,7 @@ Non-Existing Libraries:
 Contributions are welcome! If you have any good ideas in mind dont worry to try them!
 Firstly make issue about that so we can discuss it. If this issue will be closed and maintainers
 like your idea, fork this repo and make pull request. When doing this please respect rules
-included in this [file](CODE_OF_CODUCT.md). It includes theese rules and many more.
+included in this [file](CODE_OF_CONDUCT.md). It includes theese rules and many more.
 Thanks for your help!
 
 ### Dependencies
