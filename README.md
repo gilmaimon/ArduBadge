@@ -27,8 +27,12 @@ Non-Existing Libraries:
 
 
 ## Contributing
-Contributions are welcomed!
-This section should help you get started.
+Contributions are welcome! If you have any good ideas in mind dont worry to try them!
+Firstly make issue about that so we can discuss it. If this issue will be closed and maintainers
+like your idea, fork this repo and make pull request. When doing this please respect rules
+included in this [file](CODE_OF_CODUCT.md). It includes theese rules and many more.
+Thanks for your help!
+
 ### Dependencies
 In order to have your own instance of the server, you need to first have:
 #### Software Dependencies
