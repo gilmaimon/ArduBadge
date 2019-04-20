@@ -1,14 +1,14 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/9dfc74cb3e65fb4dcd84/maintainability)](https://codeclimate.com/github/gilmaimon/Arduino-Library-Manager-Badge/maintainability) [![dependencies Status](https://david-dm.org/gilmaimon/Arduino-Library-Manager-Badge/status.svg)](https://david-dm.org/gilmaimon/Arduino-Library-Manager-Badge)
 
 # ArduBadge (Arduino Library-Manager Badge)
-### Visit the website! [www.ardu-badge.com](http://www.ardu-badge.com)
 
 With the `Arduino Library-Manager` "Badge" (now `ArduBadge`) you can notify your users and GitHub visitors that your library is available for download via the built-in Arduino IDE [`Library Manager`](https://www.arduino.cc/en/guide/libraries).
 
 The badge will show whether the library is available in the Library Manager and if so, what is the latest release available. Clicking on the badge will open up a **custom** explanation for new users on how to install libraries with the Library Manager and Arduino IDE.
 
 ## Getting Started
-To get started visit [www.ardu-badge.com](http://www.ardu-badge.com)
+Making own badge for your Arduino library is very easy. Start at page of this [project](https://www.ardu-badge.com/).
+At the bottom of this page copy&paste name of you library and markdown for github will be created. Copy it and paste it somewhere in the readme of your library repo. And thats it! If you have some questions feel free to make issue!
 
 ### Examples
 Exisitng Libraries:  
@@ -24,14 +24,14 @@ Non-Existing Libraries:
 [![arduino-library-badge](http://www.ardu-badge.com/badge/NoWay.svg?)](http://www.ardu-badge.com/NoWay)
 [![arduino-library-badge](http://www.ardu-badge.com/badge/Not%20A%20Real%20Library.svg?)](http://www.ardu-badge.com/Not%20A%20Real%20Library)
 
-
-
 ## Contributing
 Contributions are welcome! If you have any good ideas in mind dont worry to try them!
 Firstly make issue about that so we can discuss it. If this issue will be closed and maintainers
 like your idea, fork this repo and make pull request. When doing this please respect rules
 included in this [file](CODE_OF_CONDUCT.md). It includes theese rules and many more.
 Thanks for your help!
+
+## Own server (not how to do the badge, to do so please visit "getting started" part of readme)
 
 ### Dependencies
 In order to have your own instance of the server, you need to first have:
