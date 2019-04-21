@@ -10,7 +10,7 @@ The badge will show whether the library is available in the Library Manager and 
 ## Getting Started
 1. To get started visit [The Website](http://www.ardu-badge.com)
 2. Look at the `Go Badge Yourself` section
-<center><img src="go_badge_yourself_section.png"></center>
+<center><img src="https://github.com/gilmaimon/ArduBadge/blob/master/go_badge_yourself_section.PNG"></center>
 
 3. Replace `MyLibrary` with your own library name
 4. Copy the markdown code and use it in your README page! 
