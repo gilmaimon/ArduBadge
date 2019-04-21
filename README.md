@@ -8,7 +8,12 @@ With the `Arduino Library-Manager` "Badge" (now `ArduBadge`) you can notify your
 The badge will show whether the library is available in the Library Manager and if so, what is the latest release available. Clicking on the badge will open up a **custom** explanation for new users on how to install libraries with the Library Manager and Arduino IDE.
 
 ## Getting Started
-To get started visit [www.ardu-badge.com](http://www.ardu-badge.com)
+1. To get started visit [The Website](http://www.ardu-badge.com)
+2. Look at the `Go Badge Yourself` section
+<center><img src="go_badge_yourself_section.png"></center>
+
+3. Replace `MyLibrary` with your own library name
+4. Copy the markdown code and use it in your README page! 
 
 ### Examples
 Exisitng Libraries:  
