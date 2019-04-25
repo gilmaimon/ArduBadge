@@ -13,6 +13,7 @@ module.exports = function(mongdb_server_url, dbname) {
                 })
                 .catch(err => {
                     console.error('Database connection error')
+                    process.exit(1337);
                 })
         }
     }
