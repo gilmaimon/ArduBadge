@@ -20,7 +20,6 @@ function cacheRecentlyStartedWatching() {
         }}
     ], function(err, data) {
         if(err) {
-            reject(err);
             return;
         }  
 
