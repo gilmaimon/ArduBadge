@@ -11,7 +11,7 @@ The badge will show whether the library is available in the Library Manager and 
 1. To get started visit [The Website](https://www.ardu-badge.com)
 2. Look at the `Go Badge Yourself` section
 <p align="center">
-  <img src="https://github.com/gilmaimon/ArduBadge/blob/master/go_badge_yourself_section.png">
+  <img src="https://github.com/gilmaimon/ArduBadge/blob/master/go_badge_yourself_section.PNG">
 </p>
 
 3. Replace `MyLibrary` with your own library name
