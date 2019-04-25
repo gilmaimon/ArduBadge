@@ -1,4 +1,5 @@
 let mongoose = require('mongoose');
+let mail_reporter = require('./email_reporter/email_sender')
 
 module.exports = function(mongdb_server_url, dbname) {
     class Database {
@@ -13,7 +14,13 @@ module.exports = function(mongdb_server_url, dbname) {
                 })
                 .catch(err => {
                     console.error('Database connection error')
-                    process.exit(1337);
+                    mail_reporter.send_email("ArduBadge Failed!", "Ardubadge failed with error:\n" + err)
+                    .catch(function(error) {
+                        console.log(error);
+                    })
+                    .then(function(info) {
+                        process.exit(1337);
+                    })
                 })
         }
     }
