@@ -2,6 +2,8 @@ let LibraryModel = require('./library_model');
 let librariesReloader = require('./libraries_reloader')
 let librariesRoute = require('./library_route')
 
+let email_reporter = require('../email_reporter/email_sender')
+
 module.exports = {
     getMostRecent : function(libName) {
         return new Promise(function(resolve, reject) {
@@ -10,7 +12,14 @@ module.exports = {
                     if(docs.length == 0) resolve(null);
                     else resolve(docs[docs.length - 1]);
                 })
-                .catch(reject);
+                .catch(function(error) {
+                    email_reporter.send_email(
+                        "ArduBadge Exception", 
+                        "Error in library.js:getMostRecent:\n" + error
+                    );
+                    
+                    reject(error);
+                });
         })
     },
     getVersion : function(libName, version) {
@@ -20,7 +29,14 @@ module.exports = {
                     if(docs.length == 0) resolve(null);
                     else resolve(docs[docs.length - 1]);
                 })
-                .catch(reject);
+                .catch(function(error) {
+                    email_reporter.send_email(
+                        "ArduBadge Exception", 
+                        "Error in library.js:getMostRecent:\n" + error
+                    );
+                    
+                    reject(error);
+                });
         })
     },
     getAllNames: function() {
@@ -29,7 +45,14 @@ module.exports = {
                 .then(function(docs) {
                     resolve(docs);
                 })
-                .catch((err) => resolve([]))
+                .catch(function(error) {
+                    email_reporter.send_email(
+                        "ArduBadge Exception", 
+                        "Error in library.js:getMostRecent:\n" + error
+                    );
+                    
+                    reject(error);
+                });
         });
     },
     onInterval: librariesReloader.onInterval,
