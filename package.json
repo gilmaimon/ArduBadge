@@ -20,16 +20,16 @@
   },
   "homepage": "https://github.com/gilmaimon/Arduino-Library-Manager-Badge#readme",
   "dependencies": {
-    "badgen": "^2.6.0",
-    "compression": "^1.7.3",
+    "badgen": "^2.8.2",
+    "compression": "^1.7.4",
     "download-file": "^0.1.5",
-    "express": "^4.16.4",
-    "express-winston": "^3.0.1",
+    "express": "^4.17.1",
+    "express-winston": "^3.2.1",
     "gunzip-file": "^0.1.1",
-    "mongoose": "^5.2.8",
+    "mongoose": "^5.6.4",
     "request": "^2.88.0",
     "rimraf": "^2.6.3",
     "sitemap": "^2.1.0",
-    "winston": "^3.1.0"
+    "winston": "^3.2.1"
   }
 }
