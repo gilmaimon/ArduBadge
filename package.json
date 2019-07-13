@@ -27,6 +27,7 @@
     "express-winston": "^3.0.1",
     "gunzip-file": "^0.1.1",
     "mongoose": "^5.2.8",
+    "nodemailer": "^6.1.1",
     "request": "^2.88.0",
     "rimraf": "^2.6.3",
     "sitemap": "^2.1.0",
