@@ -26,11 +26,11 @@
     "express": "^4.17.1",
     "express-winston": "^3.2.1",
     "gunzip-file": "^0.1.1",
-    "nodemailer": "^6.1.1",
     "mongoose": "^5.6.4",
+    "nodemailer": "^6.2.1",
     "request": "^2.88.0",
     "rimraf": "^2.6.3",
-    "sitemap": "^2.1.0",
+    "sitemap": "^2.2.0",
     "winston": "^3.2.1"
   }
 }
