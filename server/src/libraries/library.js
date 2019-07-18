@@ -7,7 +7,7 @@ let email_reporter = require('../email_reporter/email_sender')
 module.exports = {
     getMostRecent : function(libName) {
         return new Promise(function(resolve, reject) {
-            LibraryModel.find({name: libName}, {_id : false, _v: false})
+            LibraryModel.find({name: libName, isLatest: true}, {_id : false, _v: false})
                 .then(function(docs) {
                     if(docs.length == 0) resolve(null);
                     else resolve(docs[docs.length - 1]);

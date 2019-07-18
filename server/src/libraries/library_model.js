@@ -14,7 +14,8 @@ let librarySchema = new mongoose.Schema({
     repository: String,
     url: String,
     size: Number,
-    checksum: String
+    checksum: String,
+    isLatest: Boolean
 });
 librarySchema.index({ name: 1, version: 1}, { unique: true });
 let model = mongoose.model('Library', librarySchema);

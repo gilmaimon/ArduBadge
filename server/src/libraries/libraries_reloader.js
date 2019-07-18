@@ -77,6 +77,8 @@ function reloadArduinoLibraries() {
 
             for(let iLib = 0; iLib < libraries.length; iLib++) {
                 let lib = libraries[iLib];
+                lib.isLatest = iLib == (libraries.length - 1) || lib.name != libraries[iLib + 1].name;
+
                 await LibraryModel.findOneAndUpdate(
                     {name: lib.name, version: lib.version},
                     lib,
