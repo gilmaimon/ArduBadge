@@ -88,14 +88,14 @@ class Home extends Component {
                 <div className="main homeWrapper">
                 <div className="leftContent">
                     <h2>What is ArduBadge?</h2>
-                    <p>Arduino Library Manger Badge (or <span className="homeSpan">ArduBadge</span>) is a way to help new and experienced
+                    <p>Arduino Library Manager Badge (or <span className="homeSpan">ArduBadge</span>) is a way to help new and experienced
                         users to get a quick overview and installation guide for community-contributed <span className="homeSpan">Arduino</span> libraries.
                     </p>
                     <p>
                         With <span className="homeSpan">ArduBadge</span> you get a custom and dynamic markdown (GitHub) 
-                        badge that elegently shows users that your library is available 
+                        badge that elegantly shows users that your library is available 
                         via the built in <span className="homeSpan">Library Manager</span>. In one click they can view 
-                        instruction to help them trough the installtion proccess.
+                        instruction to help them through the installation proccess.
                     </p>
                     <a className="aLink" href="/MySensors/ide">
                         <h3>Click Here to see an example!</h3>
@@ -103,7 +103,7 @@ class Home extends Component {
                     <br/>
                     <div>
                         <h2>Go Badge Yourself</h2>
-                        <p>You have created an Arduino Library? <span className="homeSpan">ArduBadge</span> is completly free
+                        <p>Have you created an Arduino Library? <span className="homeSpan">ArduBadge</span> is completly free
                             and it is really easy to get your own custom badge.
                             Type your library name below and copy the badge markdown 
                             to your README.md or website.
