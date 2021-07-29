@@ -17,7 +17,7 @@ function DoesNotExist (props) {
                 <p>
                     There might be a typo in the library name, version, or the library
                     might not be published yet. If you want to add your own library 
-                    to Library Manager, follow <a href="https://github.com/arduino/Arduino/wiki/Library-Manager-FAQ#how-can-i-add-my-library-to-library-manager">these instructions</a>
+                    to Library Manager, follow <a href="https://github.com/arduino/library-registry#adding-a-library-to-library-manager">these instructions</a>
                 </p>
 
                 <NavLink to="/">
@@ -39,7 +39,7 @@ function DoesNotExist (props) {
                 <p>
                     There might be a typo in the library name or the library
                     might not be published yet. If you want to add your own library 
-                    to Library Manager, follow <a href="https://github.com/arduino/Arduino/wiki/Library-Manager-FAQ#how-can-i-add-my-library-to-library-manager">these instructions</a>
+                    to Library Manager, follow <a href="https://github.com/arduino/library-registry#adding-a-library-to-library-manager">these instructions</a>
                 </p>
 
                 <NavLink to="/">
