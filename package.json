@@ -23,7 +23,7 @@
     "badgen": "^2.8.2",
     "compression": "^1.7.4",
     "download-file": "^0.1.5",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-winston": "^3.2.1",
     "gunzip-file": "^0.1.1",
     "lodash": "^4.17.14",
