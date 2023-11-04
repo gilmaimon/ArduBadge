@@ -18,7 +18,7 @@ The badge will show whether the library is available in the Library Manager and 
 4. Copy the markdown code and use it in your README page! 
 
 ### Examples
-Exisitng Libraries:  
+Existing Libraries:  
 
 [![arduino-library-badge](https://www.ardu-badge.com/badge/ArduinoCloudStorage.svg?)](https://www.ardu-badge.com/ArduinoCloudStorage)
 [![arduino-library-badge](https://www.ardu-badge.com/badge/ArduinoComponents.svg?)](https://www.ardu-badge.com/ArduinoComponents)
