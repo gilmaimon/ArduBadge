@@ -1,13 +1,14 @@
 {
   "name": "client",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "buffer": "^6.0.3",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-input-autosize": "^2.2.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.3",
+    "react-scripts": "^5.0.1",
     "react-spinners": "^0.5.1",
     "urlencode": "^1.1.0"
   },
