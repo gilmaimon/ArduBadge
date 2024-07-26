@@ -1,13 +1,35 @@
 package main
 
 import (
+	"github.com/labstack/echo/v4"
 	"log"
-	"net/http"
 	"server/badges"
 	"server/handlers"
 	"server/libraries"
 	"server/libraries/dal"
+	"time"
 )
+
+// todo
+// 1. fetching more than once
+// 2. https somehow
+// 3. sitemap
+// 4. caching to lower load
+
+func librariesUpdater(dal *dal.InMemoryDAL) {
+	go func() {
+		for {
+			time.Sleep(time.Hour)
+
+			// fetch and update libraries
+			libs, err := libraries.FetchLatest()
+			if err != nil {
+				log.Fatalf("Failed to fetch libs")
+			}
+			dal.Update(libs)
+		}
+	}()
+}
 
 func main() {
 	libs, err := libraries.FetchLatest()
@@ -21,17 +43,17 @@ func main() {
 		log.Fatalf("Failed to create geneartor")
 	}
 
-	http.Handle("/stats/recent", &handlers.RecentHandler{LibrariesDal: dal})
+	librariesUpdater(dal)
 
-	http.Handle("/library/", &handlers.LibraryHandler{LibrariesDal: dal})
-
-	http.Handle("/badge/", &handlers.BadgeHandler{
+	server := echo.New()
+	server.GET("/stats/recent", (&handlers.RecentHandler{LibrariesDal: dal}).Handle)
+	server.GET("/library/:library", (&handlers.LibraryHandler{LibrariesDal: dal}).Handle)
+	server.GET("/badge/:library", (&handlers.BadgeHandler{
 		LibrariesDal:   dal,
 		BadgeGenerator: badgeGenerator,
-	})
+	}).Handle)
 
-	log.Println("Now server is running on port 80")
-	err = http.ListenAndServe(":80", nil)
+	err = server.Start(":80")
 	if err != nil {
 		return
 	}

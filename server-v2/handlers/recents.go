@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"encoding/json"
+	"github.com/labstack/echo/v4"
 	"net/http"
 	"server/libraries/dal"
 )
@@ -10,9 +10,7 @@ type RecentHandler struct {
 	LibrariesDal dal.DAL
 }
 
-func (h *RecentHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+func (h *RecentHandler) Handle(c echo.Context) error {
 	recent := h.LibrariesDal.ListRecent()
-	data, _ := json.Marshal(recent)
-	w.Header().Set("Content-Type", "application/json")
-	w.Write(data)
+	return c.JSON(http.StatusOK, recent)
 }

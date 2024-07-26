@@ -1,11 +1,10 @@
 package handlers
 
 import (
-	"encoding/json"
+	"github.com/labstack/echo/v4"
 	"net/http"
 	"server/libraries"
 	"server/libraries/dal"
-	"strings"
 )
 
 type LibraryHandler struct {
@@ -18,14 +17,15 @@ type libraryResponse struct {
 }
 
 func (h *LibraryHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	requestedLibrary := strings.TrimPrefix(r.URL.Path, "/library/")
+}
+
+func (h *LibraryHandler) Handle(c echo.Context) error {
+	requestedLibrary := c.Param("library")
 	data, ok := h.LibrariesDal.GetLibrary(requestedLibrary)
 	response := libraryResponse{
 		Data:  *data,
 		Found: ok,
 	}
-	bytes, _ := json.Marshal(response)
 
-	w.Header().Set("Content-Type", "application/json")
-	w.Write(bytes)
+	return c.JSON(http.StatusOK, response)
 }
