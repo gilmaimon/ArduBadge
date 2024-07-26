@@ -42,7 +42,7 @@ class Item extends Component {
 function Header(props) {
     return (
         <h3>
-            Recently Started Watching
+            Discover
         </h3>
     );
 }
