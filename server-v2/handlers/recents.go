@@ -3,11 +3,11 @@ package handlers
 import (
 	"github.com/labstack/echo/v4"
 	"net/http"
-	"server/libraries/dal"
+	"server/libraries"
 )
 
 type RecentHandler struct {
-	LibrariesDal dal.DAL
+	LibrariesDal libraries.DAL
 }
 
 func (h *RecentHandler) Handle(c echo.Context) error {

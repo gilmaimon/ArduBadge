@@ -4,12 +4,12 @@ import (
 	"github.com/labstack/echo/v4"
 	"net/http"
 	"server/badges"
-	"server/libraries/dal"
+	"server/libraries"
 	"strings"
 )
 
 type BadgeHandler struct {
-	LibrariesDal   dal.DAL
+	LibrariesDal   libraries.DAL
 	BadgeGenerator *badges.Generator
 }
 

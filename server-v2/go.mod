@@ -4,6 +4,7 @@ go 1.21.6
 
 require (
 	github.com/Masterminds/semver/v3 v3.2.1
+	github.com/SporkHubr/echo-http-cache v0.0.0-20200706100054-1d7ae9f38029
 	github.com/essentialkaos/go-badge v1.4.1
 	github.com/labstack/echo/v4 v4.12.0
 	gopkg.in/yaml.v3 v3.0.1

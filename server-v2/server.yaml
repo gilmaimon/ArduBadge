@@ -7,6 +7,9 @@ cache:
   enabled: true
   time_in_hours: 4
 
+lru:
+  enabled: true
+
 tls:
   enabled: false
   crt_file: /a/b/c.crt

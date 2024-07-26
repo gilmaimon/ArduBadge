@@ -7,7 +7,6 @@ import (
 	"server/config"
 	"server/handlers"
 	"server/libraries"
-	"server/libraries/dal"
 	"server/middlewares"
 )
 
@@ -22,7 +21,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("Failed to fetch libs")
 	}
-	dal := dal.NewInMemoryDAL(libs)
+	dal := libraries.NewInMemoryDAL(libs)
 
 	badgeGenerator, err := badges.NewGenerator()
 	if err != nil {
@@ -40,6 +39,10 @@ func main() {
 
 	if configuration.Logging.Enabled {
 		middlewares.EnableLogging(server)
+	}
+
+	if configuration.LRU.Enabled {
+		middlewares.EnableServerCaching(server)
 	}
 
 	// handlers and routes

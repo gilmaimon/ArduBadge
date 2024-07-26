@@ -4,11 +4,10 @@ import (
 	"github.com/labstack/echo/v4"
 	"net/http"
 	"server/libraries"
-	"server/libraries/dal"
 )
 
 type LibraryHandler struct {
-	LibrariesDal dal.DAL
+	LibrariesDal libraries.DAL
 }
 
 type libraryResponse struct {

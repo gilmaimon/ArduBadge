@@ -2,11 +2,10 @@ package libraries
 
 import (
 	"log"
-	"server/libraries/dal"
 	"time"
 )
 
-func RunPeriodicLibrariesUpdates(dal *dal.InMemoryDAL, refreshRateHours int64) {
+func RunPeriodicLibrariesUpdates(dal *InMemoryDAL, refreshRateHours int64) {
 	go func() {
 		for {
 			time.Sleep(time.Hour * time.Duration(refreshRateHours))
