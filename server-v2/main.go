@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 	"log"
 	"server/badges"
 	"server/config"
@@ -66,6 +67,12 @@ func main() {
 
 	// serving
 	if configuration.TLS.Enabled {
+		go func() {
+			redirecter := echo.New()
+			redirecter.Pre(middleware.HTTPSRedirect())
+			_ = redirecter.Start(":80")
+		}()
+
 		err = server.StartTLS(fmt.Sprintf(":%d", configuration.TLS.Port), configuration.TLS.CrtFile, configuration.TLS.KeyFile)
 	} else {
 		err = server.Start(fmt.Sprintf(":%d", configuration.Server.Port))
