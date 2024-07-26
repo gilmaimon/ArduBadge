@@ -1,0 +1,16 @@
+# Server Configuration File
+
+logging:
+  enabled: true
+
+cache:
+  enabled: true
+  time_in_hours: 4
+
+tls:
+  enabled: false
+  crt_file: /a/b/c.crt
+  key_file: /a/b/c.key
+
+libraries:
+  refresh_rate_hours: 1
