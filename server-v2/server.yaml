@@ -1,6 +1,7 @@
 # Server Configuration File
 server:
   port: 80
+  static-dir: ../client/build
 
 logging:
   enabled: true

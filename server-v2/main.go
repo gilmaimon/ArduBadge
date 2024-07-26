@@ -26,7 +26,7 @@ func main() {
 
 	badgeGenerator, err := badges.NewGenerator()
 	if err != nil {
-		log.Fatalf("Failed to create geneartor")
+		log.Fatalf("Failed to create badges geneartor")
 	}
 
 	libraries.RunPeriodicLibrariesUpdates(dal, configuration.Libraries.RefreshRateHours)
@@ -46,9 +46,9 @@ func main() {
 		middlewares.EnableServerCaching(server)
 	}
 
-	server.Static("/", "../client/build/")
-	server.Static("/static", "../client/build/static")
-	server.File("/favicon.png", "../client/build/favicon.png")
+	server.Static("/", configuration.Server.StaticDir)
+	server.Static("/static", configuration.Server.StaticDir+"/static")
+	server.File("/favicon.png", configuration.Server.StaticDir+"/favicon.png")
 
 	// handlers and routes
 	server.GET("/stats/recent", (&handlers.RecentHandler{LibrariesDal: dal}).Handle)
@@ -59,7 +59,7 @@ func main() {
 	}).Handle)
 
 	server.GET("/*", func(c echo.Context) error {
-		return c.File("../client/build/index.html")
+		return c.File(configuration.Server.StaticDir + "/index.html")
 	})
 
 	// serving

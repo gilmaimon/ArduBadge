@@ -8,7 +8,8 @@ import (
 
 type ServerConfiguration struct {
 	Server struct {
-		Port int `yaml:"port"`
+		Port      int    `yaml:"port"`
+		StaticDir string `yaml:"static-dir"`
 	} `yaml:"server"`
 	Logging struct {
 		Enabled bool `yaml:"enabled"`
