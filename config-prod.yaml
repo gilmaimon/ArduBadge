@@ -1,7 +1,7 @@
 # Server Configuration File
 server:
   port: 80
-  static-dir: ../client/build
+  static-dir: /app/static
 
 logging:
   enabled: true
@@ -16,8 +16,8 @@ lru:
 tls:
   port: 443
   enabled: true
-  crt_file: ../cert.pem
-  key_file: ../privkey.pem
+  crt_file: /certs/ardu-badge.cert
+  key_file: /certs/ardu-badge.key
 
 libraries:
   refresh_rate_hours: 1
