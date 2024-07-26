@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/labstack/echo/v4"
 	"log"
 	"server/badges"
@@ -55,9 +56,9 @@ func main() {
 
 	// serving
 	if configuration.TLS.Enabled {
-		err = server.StartTLS(":443", configuration.TLS.CrtFile, configuration.TLS.KeyFile)
+		err = server.StartTLS(fmt.Sprintf(":%d", configuration.TLS.Port), configuration.TLS.CrtFile, configuration.TLS.KeyFile)
 	} else {
-		err = server.Start(":80")
+		err = server.Start(fmt.Sprintf(":%d", configuration.Server.Port))
 	}
 
 	if err != nil {

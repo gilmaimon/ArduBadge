@@ -1,4 +1,6 @@
 # Server Configuration File
+server:
+  port: 80
 
 logging:
   enabled: true
@@ -11,6 +13,7 @@ lru:
   enabled: true
 
 tls:
+  port: 443
   enabled: false
   crt_file: /a/b/c.crt
   key_file: /a/b/c.key

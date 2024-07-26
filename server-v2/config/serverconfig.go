@@ -7,6 +7,9 @@ import (
 )
 
 type ServerConfiguration struct {
+	Server struct {
+		Port int `yaml:"port"`
+	} `yaml:"server"`
 	Logging struct {
 		Enabled bool `yaml:"enabled"`
 	} `yaml:"logging"`
@@ -16,6 +19,7 @@ type ServerConfiguration struct {
 	} `yaml:"cache"`
 	TLS struct {
 		Enabled bool   `yaml:"enabled"`
+		Port    int    `yaml:"port"`
 		CrtFile string `yaml:"crt_file"`
 		KeyFile string `yaml:"key_file"`
 	} `yaml:"tls"`
