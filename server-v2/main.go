@@ -46,6 +46,8 @@ func main() {
 		middlewares.EnableServerCaching(server)
 	}
 
+	server.Static("/*", "../client/build")
+
 	// handlers and routes
 	server.GET("/stats/recent", (&handlers.RecentHandler{LibrariesDal: dal}).Handle)
 	server.GET("/library/:library", (&handlers.LibraryHandler{LibrariesDal: dal}).Handle)
@@ -53,6 +55,10 @@ func main() {
 		LibrariesDal:   dal,
 		BadgeGenerator: badgeGenerator,
 	}).Handle)
+
+	server.GET("/*", func(c echo.Context) error {
+		return c.File("../client/build/index.html")
+	})
 
 	// serving
 	if configuration.TLS.Enabled {

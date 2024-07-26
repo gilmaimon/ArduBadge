@@ -14,5 +14,5 @@
   "background_color": "#fcffff",
   "description": "ArduBadge - Get markdown badges for your Arduino Libraries on Github. Get custom installation page and markdown badge.",
   "lang": "en-US",
-  ​​"orientation": "portrait-primary"
+  "orientation": "portrait-primary"
 }
