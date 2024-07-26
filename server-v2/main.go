@@ -11,8 +11,7 @@ import (
 	"server/middlewares"
 )
 
-// todo
-// 3. sitemap
+// todo - sitemap
 
 func main() {
 	configuration := config.ReadServerConfiguration("server.yaml")
@@ -49,6 +48,9 @@ func main() {
 	server.Static("/", configuration.Server.StaticDir)
 	server.Static("/static", configuration.Server.StaticDir+"/static")
 	server.File("/favicon.png", configuration.Server.StaticDir+"/favicon.png")
+	server.GET("/manifest.json", func(c echo.Context) error {
+		return c.File(configuration.Server.StaticDir + "/manifest.json")
+	})
 
 	// handlers and routes
 	server.GET("/stats/recent", (&handlers.RecentHandler{LibrariesDal: dal}).Handle)
