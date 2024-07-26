@@ -36,13 +36,13 @@ function LibraryManagerExplanation(props) {
                     IDE and click to the <ActionPhrase body="Sketch" /> menu and  
                     then <ActionPhrase body="Include Library > Manage Libraries." /></p>
 
-                <img alt="shows how to get to library manager" className="explanationImg" src="/manage_libs.png"/>
+                <img alt="shows how to get to library manager" className="explanationImg" src="/static/manage_libs.png"/>
                 <p>Then the Library Manager will open and you will find a list of libraries 
                     that are already installed or ready for installation. In order to 
                     install {libName}, search for "{libName}", 
                     scroll the list to find it and <ActionPhrase body="click on it"/>.</p>
                 
-                <img alt="shows how to get the library target version and install" className="explanationImg" src="/libs_manager.png"/>
+                <img alt="shows how to get the library target version and install" className="explanationImg" src="/static/libs_manager.png"/>
                 <p>You should see the target version of {libName} (version <IdePhrase body={version}/>) listed.</p>
                 <p>Finally click on <ActionPhrase body="install"/> and wait for the IDE to install {libName}. 
                     Downloading may take time depending on your connection speed. Once it 
@@ -83,10 +83,10 @@ function ZipExplanation(props) {
                 <p>In the <IdePhrase body="Arduino IDE" />, navigate to <ActionPhrase body="Sketch > Include Library > Add .ZIP Library" />
                     . At the top of the drop down list, select the 
                      option to <ActionPhrase body="Add .ZIP Library"/>.</p>
-                <img alt="shows how to get to add ZIP window" className="explanationImg" src="/add_zip.png"/>
+                <img alt="shows how to get to add ZIP window" className="explanationImg" src="/static/add_zip.png"/>
                 <p>You will be prompted to select the {libName} <IdePhrase body="ZIP" />-file. <ActionPhrase body="Navigate" /> to 
                     the downloaded {libName} .zip file location and <ActionPhrase body="open" /> it.</p>
-                <img alt="shows to select a zip file" className="explanationImg" src="/choose_zip.png"/>
+                <img alt="shows to select a zip file" className="explanationImg" src="/static/choose_zip.png"/>
                 <p>Return to the <ActionPhrase body="Sketch > Include Library" /> menu. You should now 
                     see {libName} at the bottom of the drop-down menu. It is 
                     ready to be used in your sketch. </p>

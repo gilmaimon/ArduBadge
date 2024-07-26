@@ -120,7 +120,7 @@ class Home extends Component {
                     <h3> View on Github </h3>
                     <div className="githubLogoWrapper">    
                         <a className="githubLink" href="https://github.com/gilmaimon/ArduBadge">
-                            <img className="githubLogo" alt="Github Logo" src="/github_logo.png" />
+                            <img className="githubLogo" alt="Github Logo" src="/static/github_logo.png" />
                         </a>
                         <div className="starBtnWrapper">
                             <a className="github-button" 

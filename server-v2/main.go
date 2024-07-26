@@ -46,7 +46,9 @@ func main() {
 		middlewares.EnableServerCaching(server)
 	}
 
-	server.Static("/*", "../client/build")
+	server.Static("/", "../client/build/")
+	server.Static("/static", "../client/build/static")
+	server.File("/favicon.png", "../client/build/favicon.png")
 
 	// handlers and routes
 	server.GET("/stats/recent", (&handlers.RecentHandler{LibrariesDal: dal}).Handle)
