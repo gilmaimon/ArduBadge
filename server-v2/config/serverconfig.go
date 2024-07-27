@@ -27,9 +27,6 @@ type ServerConfiguration struct {
 	Libraries struct {
 		RefreshRateHours int64 `yaml:"refresh_rate_hours"`
 	} `yaml:"libraries"`
-	LRU struct {
-		Enabled bool `yaml:"enabled"`
-	} `yaml:"lru"`
 }
 
 func ReadServerConfiguration(path string) ServerConfiguration {

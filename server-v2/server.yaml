@@ -10,12 +10,9 @@ cache:
   enabled: true
   time_in_hours: 4
 
-lru:
-  enabled: true
-
 tls:
   port: 443
-  enabled: true
+  enabled: false
   crt_file: ../cert.pem
   key_file: ../privkey.pem
 

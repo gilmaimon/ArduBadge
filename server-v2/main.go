@@ -42,18 +42,14 @@ func main() {
 		middlewares.EnableLogging(server)
 	}
 
-	if configuration.LRU.Enabled {
-		middlewares.EnableServerCaching(server)
-	}
-
-	server.Static("/", configuration.Server.StaticDir)
+	// Static files
 	server.Static("/static", configuration.Server.StaticDir+"/static")
 	server.File("/favicon.png", configuration.Server.StaticDir+"/favicon.png")
 	server.GET("/manifest.json", func(c echo.Context) error {
 		return c.File(configuration.Server.StaticDir + "/manifest.json")
 	})
 
-	// handlers and routes
+	// API routes
 	server.GET("/stats/recent", (&handlers.RecentHandler{LibrariesDal: dal}).Handle)
 	server.GET("/library/:library", (&handlers.LibraryHandler{LibrariesDal: dal}).Handle)
 	server.GET("/badge/:library", (&handlers.BadgeHandler{
@@ -61,7 +57,8 @@ func main() {
 		BadgeGenerator: badgeGenerator,
 	}).Handle)
 
-	server.GET("/*", func(c echo.Context) error {
+	// Catch-all route for single-page application (SPA)
+	server.GET("*", func(c echo.Context) error {
 		return c.File(configuration.Server.StaticDir + "/index.html")
 	})
 

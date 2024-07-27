@@ -10,9 +10,6 @@ cache:
   enabled: true
   time_in_hours: 4
 
-lru:
-  enabled: true
-
 tls:
   port: 443
   enabled: false
