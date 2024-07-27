@@ -15,7 +15,7 @@ lru:
 
 tls:
   port: 443
-  enabled: true
+  enabled: false
   crt_file: /certs/ardu-badge.cert
   key_file: /certs/ardu-badge.key
 
