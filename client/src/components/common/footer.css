@@ -11,8 +11,13 @@
     text-align: center;
 }
 
+.spacing {
+    padding-top: 5px;
+}
+
 .contactLink {
     color: white;
+    opacity: 90%;
     text-decoration: none;
     font-size: 1rem;
 }

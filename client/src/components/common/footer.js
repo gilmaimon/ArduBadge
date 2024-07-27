@@ -8,7 +8,7 @@ function Footer (props) {
                 <a href="/" className="homeLink">
                     ArduBadge
                 </a>
-                <br/>
+                <div className="spacing"/>
                 <a href="https://github.com/gilmaimon" className="contactLink">
                     Gil Maimon &lt;mail.gilmaimon@gmail.com&gt;
                 </a>
