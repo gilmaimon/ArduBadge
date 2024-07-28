@@ -1,5 +1,6 @@
 # Project Specific
 tmp/
+.idea/
 
 # Logs
 #logs
